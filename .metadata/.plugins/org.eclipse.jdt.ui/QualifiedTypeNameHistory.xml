@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="basic.AutoPrint"/>
 <fullyQualifiedTypeName name="basic.ShareData"/>
 <fullyQualifiedTypeName name="basic.CalcPIThread"/>
-<fullyQualifiedTypeName name="basic.PrintPIThread"/>
 <fullyQualifiedTypeName name="basic.ShareObject"/>
 <fullyQualifiedTypeName name="basic.TestThread"/>
 <fullyQualifiedTypeName name="basic.ThreadTest16"/>
@@ -31,6 +30,17 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="basic.Horse"/>
 <fullyQualifiedTypeName name="basic.GameState"/>
-<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="basic.WorkObject"/>
+<fullyQualifiedTypeName name="basic.ThreadA"/>
+<fullyQualifiedTypeName name="basic.ThreadB"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="basic.DataBox"/>
+<fullyQualifiedTypeName name="basic.PrintPIThread"/>
+<fullyQualifiedTypeName name="basic.ProducerThread"/>
+<fullyQualifiedTypeName name="basic.ConsumerThread"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="basic.file.FileTest03"/>
 </qualifiedTypeNameHistroy>
