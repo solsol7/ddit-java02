@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class BufferedIOTest02 {
--
+
 	public static void main(String[] args) {
 		// 문자 기반의 입력용 Buffered스트림 예제
 		
