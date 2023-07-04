@@ -1,8 +1,8 @@
 package basic;
 /*
- * ¹®Á¦ : 5¸íÀÇ »ç¶÷ ÀÌ¸§À» ÀÔ·Â¹Ş¾Æ Arraylist¿¡ ÀúÀåÇÑ ÈÄ¿¡
- * 		ÀÌµé Áß '±è' ¾¾ ¼ºÀÇ ÀÌ¸§À» ¸ğµÎ Ãâ·ÂÇÏ½Ã¿À.
- * 		(´Ü, ÀÔ·ÂÀº Scanner°´Ã¼¸¦ ÀÌ¿ëÇÑ´Ù.)
+ * ë¬¸ì œ : 5ëª…ì˜ ì‚¬ëŒ ì´ë¦„ì„ ì…ë ¥ë°›ì•„ Arraylistì— ì €ì¥í•œ í›„ì—
+ * 		ì´ë“¤ ì¤‘ 'ê¹€' ì”¨ ì„±ì˜ ì´ë¦„ì„ ëª¨ë‘ ì¶œë ¥í•˜ì‹œì˜¤.
+ * 		(ë‹¨, ì…ë ¥ì€ Scannerê°ì²´ë¥¼ ì´ìš©í•œë‹¤.)
  * 
  * 		substring / split / toCharArray / startsWith / charAt
  */
@@ -17,28 +17,28 @@ public class ArrayListTest02 {
 		ArrayList<String> list = new ArrayList<>();
 
 		for (int i = 0; i < 5; i++) {
-			System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+			System.out.print("ì´ë¦„ ì…ë ¥ : ");
 			list.add(sc.nextLine());
 		}
 
 		for (String str : list) {
 			/*
-			if (str.toCharArray()[0] == '±è') {
+			if (str.toCharArray()[0] == 'ê¹€') {
 				System.out.println(str);
 			}
 			*/
 			/*
-			if(str.charAt(0)=='±è') {
+			if(str.charAt(0)=='ê¹€') {
 				System.out.println(str);
 			}
 			*/
 			/*
-			if(str.startsWith("±è")) {
+			if(str.startsWith("ê¹€")) {
 				System.out.println(str);
 			}
 			*/
 			/*
-			if(str.indexOf("±è")==0) {
+			if(str.indexOf("ê¹€")==0) {
 				System.out.println(str);
 			}
 			 */

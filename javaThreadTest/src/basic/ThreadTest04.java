@@ -1,17 +1,17 @@
 package basic;
 /*
- * 1~20¾ï±îÁöÀÇ ÇÕ°è¸¦ ±¸ÇÏ´Â ÇÁ·Î±×·¥À» ÇÏ³ªÀÇ ¾²·¹µå°¡ ´Üµ¶À¸·Î Ã³¸®ÇÒ ¶§¿Í
- * ¿©·¯ °³ÀÇ ¾²·¹µå°¡ Çù·ÂÇØ¼­ Ã³¸®ÇÒ ¶§ÀÇ °æ°ú ½Ã°£À» ºñ±³ÇØ º¸ÀÚ...
+ * 1~20ì–µê¹Œì§€ì˜ í•©ê³„ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ í•˜ë‚˜ì˜ ì“°ë ˆë“œê°€ ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œì™€
+ * ì—¬ëŸ¬ ê°œì˜ ì“°ë ˆë“œê°€ í˜‘ë ¥í•´ì„œ ì²˜ë¦¬í•  ë•Œì˜ ê²½ê³¼ ì‹œê°„ì„ ë¹„êµí•´ ë³´ì...
  */
 
 
 public class ThreadTest04 {
 
 	public static void main(String[] args) {
-		// ´Üµ¶À¸·Î Ã³¸®ÇÏ´Â ¾²·¹µå
+		// ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•˜ëŠ” ì“°ë ˆë“œ
 		SumThread smTh = new SumThread(1, 2_000_000_000L);
 		
-		// ¿©·µÀÌ Çù·ÂÇØ¼­ Ã³¸®ÇÏ´Â ¾²·¹µå
+		// ì—¬ëŸ¿ì´ í˜‘ë ¥í•´ì„œ ì²˜ë¦¬í•˜ëŠ” ì“°ë ˆë“œ
 		SumThread[] sumThs = new SumThread[] {
 				new SumThread(1, 500_000_000L),
 				new SumThread(500_000_001L, 1_000_000_000L),
@@ -19,7 +19,7 @@ public class ThreadTest04 {
 				new SumThread(1_500_000_001L, 2_000_000_000L)
 		};
 		
-		//´Üµ¶À¸·Î Ã³¸®ÇÏ±â...
+		//ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•˜ê¸°...
 		
 		long startTime = System.currentTimeMillis();
 		smTh.start();
@@ -29,10 +29,10 @@ public class ThreadTest04 {
 			
 		}
 		long endTime = System.currentTimeMillis();
-		System.out.println("´Üµ¶À¸·Î Ã³¸®ÇÒ ¶§ÀÇ °æ°ú ½Ã°£ : "+(endTime-startTime));
+		System.out.println("ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œì˜ ê²½ê³¼ ì‹œê°„ : "+(endTime-startTime));
 		System.out.println();
 		
-		//¿©·¯ ¾²·¹µå°¡ Çù·ÂÇØ¼­ Ã³¸®ÇÏ´Â °æ¿ì
+		//ì—¬ëŸ¬ ì“°ë ˆë“œê°€ í˜‘ë ¥í•´ì„œ ì²˜ë¦¬í•˜ëŠ” ê²½ìš°
 		startTime = System.currentTimeMillis();
 		for(int i=0; i<sumThs.length; i++) {
 			sumThs[i].start();
@@ -47,7 +47,7 @@ public class ThreadTest04 {
 		}
 		
 		endTime = System.currentTimeMillis();
-		System.out.println("¿©·¯ ¾²·¹µå°¡ Çù·ÂÇØ¼­ Ã³¸®ÇÒ ¶§ÀÇ °æ°ú ½Ã°£ : "+(endTime-startTime));
+		System.out.println("ì—¬ëŸ¬ ì“°ë ˆë“œê°€ í˜‘ë ¥í•´ì„œ ì²˜ë¦¬í•  ë•Œì˜ ê²½ê³¼ ì‹œê°„ : "+(endTime-startTime));
 		
 	}
 }
@@ -72,7 +72,7 @@ class SumThread extends Thread{
 		for(long i=start; i<=end; i++) {
 			sum+=i;
 		}
-		System.out.println(start+"ºÎÅÍ "+end+"±îÁöÀÇ ÇÕ°è : "+ sum);
+		System.out.println(start+"ë¶€í„° "+end+"ê¹Œì§€ì˜ í•©ê³„ : "+ sum);
 	}
 	
 }

@@ -2,32 +2,32 @@ package generic;
 
 
 /*
-- Á¦³×¸¯ Å¬·¡½º¸¦ ¸¸µå´Â ¹æ¹ı
-Çü½Ä)
-class Å¬·¡½º¸í<Á¦³×¸¯Å¸ÀÔ±ÛÀÚ>{
-	Á¦³×¸¯Å¸ÀÔ±ÛÀÚ º¯¼ö¸í;				//º¯¼ö ¼±¾ğ¿¡ Á¦³×¸¯À» »ç¿ëÇÒ °æ¿ì
+- ì œë„¤ë¦­ í´ë˜ìŠ¤ë¥¼ ë§Œë“œëŠ” ë°©ë²•
+í˜•ì‹)
+class í´ë˜ìŠ¤ëª…<ì œë„¤ë¦­íƒ€ì…ê¸€ì>{
+	ì œë„¤ë¦­íƒ€ì…ê¸€ì ë³€ìˆ˜ëª…;				//ë³€ìˆ˜ ì„ ì–¸ì— ì œë„¤ë¦­ì„ ì‚¬ìš©í•  ê²½ìš°
 	...
 	
-	Á¦³×¸¯Å¸ÀÔ±ÛÀÚ ¸Ş¼­µå¸í() {		//¹İÈ¯°ªÀÌ ÀÖ´Â ¸Ş¼­µå¿¡ Á¦³×¸¯À» »ç¿ëÇÒ °æ¿ì
+	ì œë„¤ë¦­íƒ€ì…ê¸€ì ë©”ì„œë“œëª…() {		//ë°˜í™˜ê°’ì´ ìˆëŠ” ë©”ì„œë“œì— ì œë„¤ë¦­ì„ ì‚¬ìš©í•  ê²½ìš°
 		...
-		return °ª;
+		return ê°’;
 	}
 	...
 	
-	¹İÈ¯°ªÅ¸ÀÔ ¸Ş¼­µå¸í(Á¦³×¸¯Å¸ÀÔ±ÛÀÚ º¯¼ö¸í, ...){	//¸Ş¼­µåÀÇ ¸Å°³º¯¼ö¿¡ Á¦³×¸¯À» »ç¿ëÇÒ °æ¿ì
+	ë°˜í™˜ê°’íƒ€ì… ë©”ì„œë“œëª…(ì œë„¤ë¦­íƒ€ì…ê¸€ì ë³€ìˆ˜ëª…, ...){	//ë©”ì„œë“œì˜ ë§¤ê°œë³€ìˆ˜ì— ì œë„¤ë¦­ì„ ì‚¬ìš©í•  ê²½ìš°
 		...
 		
 	}
  }
  
- 	-- Á¦³×¸¯ Å¸ÀÔ ±ÛÀÚ --
+ 	-- ì œë„¤ë¦­ íƒ€ì… ê¸€ì --
  	T ==> Type
  	K ==> Key
  	V ==> Value
- 	E ==> Element (µ¥ÀÌÅÍ¸¦ ÀÇ¹ÌÇÔ)
+ 	E ==> Element (ë°ì´í„°ë¥¼ ì˜ë¯¸í•¨)
 */
 
-// Á¦³×¸¯À» »ç¿ëÇÏÁö ¾Ê´Â Å¬·¡½º
+// ì œë„¤ë¦­ì„ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” í´ë˜ìŠ¤
 class NonGenericClass{
 	private Object value;
 	
@@ -40,7 +40,7 @@ class NonGenericClass{
 	}
 }
 
-// Á¦³×¸¯À» Àû¿ëÇÑ Å¬·¡½º
+// ì œë„¤ë¦­ì„ ì ìš©í•œ í´ë˜ìŠ¤
 class MyGeneric<T>{
 	private T value;
 	
@@ -57,28 +57,28 @@ public class GenericTest {
 
 	public static void main(String[] args) {
 		NonGenericClass ng1=new NonGenericClass();
-		ng1.setValue("°¡³ª´Ù");
+		ng1.setValue("ê°€ë‚˜ë‹¤");
 		
 		NonGenericClass ng2 = new NonGenericClass();
 		ng2.setValue(100);
 		
 		String tempNg1 = (String)ng1.getValue();
-		System.out.println("¹®ÀÚ¿­ ¹İÈ¯°ª  tempNg1 => "+tempNg1);
+		System.out.println("ë¬¸ìì—´ ë°˜í™˜ê°’  tempNg1 => "+tempNg1);
 		
 		int iTempNg2 = (int)ng2.getValue();
-		System.out.println("Á¤¼ö ¹İÈ¯°ª iTempNg2 => "+ iTempNg2);
+		System.out.println("ì •ìˆ˜ ë°˜í™˜ê°’ iTempNg2 => "+ iTempNg2);
 		System.out.println();
 		
 		MyGeneric<String> mg1 = new MyGeneric<String>();
 		MyGeneric<Integer> mg2 = new MyGeneric<Integer>();
 		
-		mg1.setValue("¿ì¸®³ª¶ó");
+		mg1.setValue("ìš°ë¦¬ë‚˜ë¼");
 		mg2.setValue(500);
 
 		String tempMg1 = mg1.getValue();
 		int iTempMg2 = mg2.getValue();
-		System.out.println("Á¦³×¸¯ ¹®ÀÚ¿­ ¹İÈ¯°ª => "+tempMg1);
-		System.out.println("Á¦³×¸¯ Á¤¼ö ¹İÈ¯°ª => "+iTempMg2);
+		System.out.println("ì œë„¤ë¦­ ë¬¸ìì—´ ë°˜í™˜ê°’ => "+tempMg1);
+		System.out.println("ì œë„¤ë¦­ ì •ìˆ˜ ë°˜í™˜ê°’ => "+iTempMg2);
 		
 		NonGenericClass ng3 = new NonGenericClass();
 		ng3.setValue(1000);

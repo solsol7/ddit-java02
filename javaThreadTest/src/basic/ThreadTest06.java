@@ -15,39 +15,39 @@ public class ThreadTest06 {
 
 }
 
-//µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ´Â ¾²·¹µå
+//ë°ì´í„°ë¥¼ ì…ë ¥í•˜ëŠ” ì“°ë ˆë“œ
 class DataInput extends Thread{
-	//ÀÔ·Â ¿©ºÎ¸¦ È®ÀÎÇÏ±â À§ÇÑ º¯¼ö ¼±¾ğ ==> ¾²·¹µå¿¡¼­ °øÅëÀ¸·Î »ç¿ëµÇ´Â º¯¼ö
+	//ì…ë ¥ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ ì„ ì–¸ ==> ì“°ë ˆë“œì—ì„œ ê³µí†µìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” ë³€ìˆ˜
 	public static boolean inputCheck = false;
 	
 	@Override
 	public void run() {
-		String str= JOptionPane.showInputDialog("¾Æ¹«°Å³ª ÀÔ·ÂÇÏ¼¼¿ä...");
-		inputCheck = true;			//ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é true°ªÀ» ÀúÀåÇÑ´Ù.
-		System.out.println("ÀÔ·Â °ª >>" + str);
+		String str= JOptionPane.showInputDialog("ì•„ë¬´ê±°ë‚˜ ì…ë ¥í•˜ì„¸ìš”...");
+		inputCheck = true;			//ì…ë ¥ì´ ì™„ë£Œë˜ë©´ trueê°’ì„ ì €ì¥í•œë‹¤.
+		System.out.println("ì…ë ¥ ê°’ >>" + str);
 	}
 }
 
-//Ä«¿îÆ® ´Ù¿îÀ» ÁøÇàÇÏ´Â ¾²·¹µå
+//ì¹´ìš´íŠ¸ ë‹¤ìš´ì„ ì§„í–‰í•˜ëŠ” ì“°ë ˆë“œ
 class CountDown extends Thread{
 	@Override
 	public void run() {
 		for(int i=10; i>0; i--) {
-			//ÀÔ·Â ¿©ºÎ¸¦ È®ÀÎÇÏ¿© ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é ¾²·¹µå¸¦ Á¾·á ½ÃÅ²´Ù.
+			//ì…ë ¥ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ì—¬ ì…ë ¥ì´ ì™„ë£Œë˜ë©´ ì“°ë ˆë“œë¥¼ ì¢…ë£Œ ì‹œí‚¨ë‹¤.
 			if(DataInput.inputCheck==true) {
-				// run()¸Ş¼­µå°¡ Á¾·áµÇ¸é ÇØ´ç ¾²·¹µå°¡ Á¾·áµÇ´Â °Í°ú °°´Ù.
+				// run()ë©”ì„œë“œê°€ ì¢…ë£Œë˜ë©´ í•´ë‹¹ ì“°ë ˆë“œê°€ ì¢…ë£Œë˜ëŠ” ê²ƒê³¼ ê°™ë‹¤.
 				return;
 			}
 			
 			try {
 				System.out.println(i);
-				Thread.sleep(1000);				//1ÃÊ µ¿¾È ¸ØÃá´Ù.
+				Thread.sleep(1000);				//1ì´ˆ ë™ì•ˆ ë©ˆì¶˜ë‹¤.
 			} catch (InterruptedException e) {
 				
 			}
 		}
 		
-		System.out.println("10ÃÊ°¡ Áö³µ½À´Ï´Ù... ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù...");
-		System.exit(0); 		//ÇÁ·Î±×·¥À» °­Á¦·Î Á¾·á½ÃÅ´
+		System.out.println("10ì´ˆê°€ ì§€ë‚¬ìŠµë‹ˆë‹¤... í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤...");
+		System.exit(0); 		//í”„ë¡œê·¸ë¨ì„ ê°•ì œë¡œ ì¢…ë£Œì‹œí‚´
 	}
 }

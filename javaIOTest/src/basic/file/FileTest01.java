@@ -5,69 +5,69 @@ import java.io.File;
 public class FileTest01 {
 
 	public static void main(String[] args) {
-		//File°´Ã¼ ¸¸µé±â ¿¬½À
+		//Fileê°ì²´ ë§Œë“¤ê¸° ì—°ìŠµ
 		
-		//1. new File(String ÆÄÀÏ ¶Ç´Â °æ·Î)
-		//	==> µğ·ºÅä¸®¿Í µğ·ºÅä¸® »çÀÌ ¶Ç´Â µğ·ºÅä¸®¿Í ÆÄÀÏ¸í »çÀÌÀÇ ±¸ºĞ¹®ÀÚ´Â
-		//		¿ª½½·¡½¬('\')¸¦ »ç¿ëÇÏ°Å³ª ½½·¡½¬('/')¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		//1. new File(String íŒŒì¼ ë˜ëŠ” ê²½ë¡œ)
+		//	==> ë””ë ‰í† ë¦¬ì™€ ë””ë ‰í† ë¦¬ ì‚¬ì´ ë˜ëŠ” ë””ë ‰í† ë¦¬ì™€ íŒŒì¼ëª… ì‚¬ì´ì˜ êµ¬ë¶„ë¬¸ìëŠ”
+		//		ì—­ìŠ¬ë˜ì‰¬('\')ë¥¼ ì‚¬ìš©í•˜ê±°ë‚˜ ìŠ¬ë˜ì‰¬('/')ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		
-		//File file1 = new File("d:\\D_Other\\test.txt");	//±¸ºĞ¹®ÀÚ¸¦ ¿ª½½·¡½¬('\')·Î »ç¿ë - ¿ª½½·¡½¬´Â Å« µû¿ÈÇ¥ ¾È¿¡ ¾µ ¶§ µÎ¹ø ½áÁà¾ßÇÔ
-		File file1 = new File("d:/D_Other/test.txt");	//±¸ºĞ¹®ÀÚ¸¦ ½½·¡½¬('/')·Î »ç¿ë
+		//File file1 = new File("d:\\D_Other\\test.txt");	//êµ¬ë¶„ë¬¸ìë¥¼ ì—­ìŠ¬ë˜ì‰¬('\')ë¡œ ì‚¬ìš© - ì—­ìŠ¬ë˜ì‰¬ëŠ” í° ë”°ì˜´í‘œ ì•ˆì— ì“¸ ë•Œ ë‘ë²ˆ ì¨ì¤˜ì•¼í•¨
+		File file1 = new File("d:/D_Other/test.txt");	//êµ¬ë¶„ë¬¸ìë¥¼ ìŠ¬ë˜ì‰¬('/')ë¡œ ì‚¬ìš©
 		
-		System.out.println("ÆÄÀÏ¸í : "+file1.getName());
-		System.out.println("µğ·ºÅä¸® ÀÎ°¡? ==> "+file1.isDirectory());
-		System.out.println("ÆÄÀÏ ÀÎ°¡? ==> "+ file1.isFile());
+		System.out.println("íŒŒì¼ëª… : "+file1.getName());
+		System.out.println("ë””ë ‰í† ë¦¬ ì¸ê°€? ==> "+file1.isDirectory());
+		System.out.println("íŒŒì¼ ì¸ê°€? ==> "+ file1.isFile());
 		System.out.println();
 		
 		File file2 = new File("d:/D_Other");
-		System.out.println("ÆÄÀÏ¸í : "+file2.getName());
-		System.out.println("µğ·ºÅä¸® ÀÎ°¡? ==> "+file2.isDirectory());
-		System.out.println("ÆÄÀÏ ÀÎ°¡? ==> "+file2.isFile());
+		System.out.println("íŒŒì¼ëª… : "+file2.getName());
+		System.out.println("ë””ë ‰í† ë¦¬ ì¸ê°€? ==> "+file2.isDirectory());
+		System.out.println("íŒŒì¼ ì¸ê°€? ==> "+file2.isFile());
 		System.out.println();
 		
 		//2. new File(File parent, String child)
-		//	==> 'parent'µğ·ºÅä¸® ¾È¿¡ ÀÖ´Â 'child'ÆÄÀÏÀÇ Á¤º¸¸¦ °®´Â File°´Ã¼ »ı¼º
+		//	==> 'parent'ë””ë ‰í† ë¦¬ ì•ˆì— ìˆëŠ” 'child'íŒŒì¼ì˜ ì •ë³´ë¥¼ ê°–ëŠ” Fileê°ì²´ ìƒì„±
 		File file3 = new File(file2, "test.txt");
-		System.out.println("ÆÄÀÏ¸í : "+file3.getName());
-		System.out.println("µğ·ºÅä¸® ÀÎ°¡? ==> "+file3.isDirectory());
-		System.out.println("ÆÄÀÏ ÀÎ°¡? ==> "+file3.isFile());
+		System.out.println("íŒŒì¼ëª… : "+file3.getName());
+		System.out.println("ë””ë ‰í† ë¦¬ ì¸ê°€? ==> "+file3.isDirectory());
+		System.out.println("íŒŒì¼ ì¸ê°€? ==> "+file3.isFile());
 		System.out.println();
 		
 		//3. new File(String parent, String child)
-		//	==> 'parent'µğ·ºÅä¸® ¾È¿¡ ÀÖ´Â 'child'ÆÄÀÏÀÇ Á¤º¸¸¦ °®´Â File°´Ã¼ »ı¼º
+		//	==> 'parent'ë””ë ‰í† ë¦¬ ì•ˆì— ìˆëŠ” 'child'íŒŒì¼ì˜ ì •ë³´ë¥¼ ê°–ëŠ” Fileê°ì²´ ìƒì„±
 		File file4 = new File("d:/D_Other", "test.txt");
-		System.out.println("ÆÄÀÏ¸í : "+file4.getName());
-		System.out.println("µğ·ºÅä¸® ÀÎ°¡? ==> "+file4.isDirectory());
-		System.out.println("ÆÄÀÏ ÀÎ°¡? ==> "+file4.isFile());
+		System.out.println("íŒŒì¼ëª… : "+file4.getName());
+		System.out.println("ë””ë ‰í† ë¦¬ ì¸ê°€? ==> "+file4.isDirectory());
+		System.out.println("íŒŒì¼ ì¸ê°€? ==> "+file4.isFile());
 		System.out.println();
 		System.out.println("----------------------------------------------------");
 		System.out.println();
 		
-		// µğ·ºÅä¸®(Æú´õ) ¸¸µé±â
+		// ë””ë ‰í† ë¦¬(í´ë”) ë§Œë“¤ê¸°
 		/*
-		 - mkdir() ==> File°´Ã¼ÀÇ °æ·Î Áß ¸¶Áö¸· À§Ä¡ÀÇ µğ·ºÅä¸®¸¦ ¸¸µç´Ù.
-		 		==> ¹İÈ¯°ª : ¸¸µé±â ¼º°ø(true), ¸¸µé±â ½ÇÆĞ(false)
-		 		==> ÁöÁ¤ÇÑ ÀüÃ¼ °æ·Î Áß¿¡¼­ Áß°£ ºÎºĞÀÇ °æ·Î°¡ ¸ğµÎ ¸¸µé¾îÁ® ÀÖ¾î¾ß ¸¶Áö¸· À§Ä¡ÀÇ °æ·Î¸¦ ¸¸µé ¼ö ÀÖ´Ù.
-		 - mkdirs()	==> ÀüÃ¼ °æ·Î Áß¿¡¼­ Áß°£ ºÎºĞÀÌ ¾øÀ¸¸é Áß°£ ºÎºĞÀÇ °æ·Îµµ °°ÀÌ ¸¸µé¾î ÁØ´Ù.
+		 - mkdir() ==> Fileê°ì²´ì˜ ê²½ë¡œ ì¤‘ ë§ˆì§€ë§‰ ìœ„ì¹˜ì˜ ë””ë ‰í† ë¦¬ë¥¼ ë§Œë“ ë‹¤.
+		 		==> ë°˜í™˜ê°’ : ë§Œë“¤ê¸° ì„±ê³µ(true), ë§Œë“¤ê¸° ì‹¤íŒ¨(false)
+		 		==> ì§€ì •í•œ ì „ì²´ ê²½ë¡œ ì¤‘ì—ì„œ ì¤‘ê°„ ë¶€ë¶„ì˜ ê²½ë¡œê°€ ëª¨ë‘ ë§Œë“¤ì–´ì ¸ ìˆì–´ì•¼ ë§ˆì§€ë§‰ ìœ„ì¹˜ì˜ ê²½ë¡œë¥¼ ë§Œë“¤ ìˆ˜ ìˆë‹¤.
+		 - mkdirs()	==> ì „ì²´ ê²½ë¡œ ì¤‘ì—ì„œ ì¤‘ê°„ ë¶€ë¶„ì´ ì—†ìœ¼ë©´ ì¤‘ê°„ ë¶€ë¶„ì˜ ê²½ë¡œë„ ê°™ì´ ë§Œë“¤ì–´ ì¤€ë‹¤.
 		 */
-		File file5 = new File("d:/d_Other/¿¬½À¿ë");
-		System.out.println(file5.getName() + "ÀÇ Á¸Àç ¿©ºÎ : "+file5.exists());
+		File file5 = new File("d:/d_Other/ì—°ìŠµìš©");
+		System.out.println(file5.getName() + "ì˜ ì¡´ì¬ ì—¬ë¶€ : "+file5.exists());
 		System.out.println();
 		
 		if(file5.mkdir()) {
-			System.out.println(file5.getName()+ "¸¸µé±â ¼º°ø!!!");
+			System.out.println(file5.getName()+ "ë§Œë“¤ê¸° ì„±ê³µ!!!");
 		}else {
-			System.out.println(file5.getName()+ "¸¸µé±â ½ÇÆĞ!!!");		
+			System.out.println(file5.getName()+ "ë§Œë“¤ê¸° ì‹¤íŒ¨!!!");		
 		}
 		System.out.println();
 		
 		File file6 = new File("d:/d_other/test/java/src");
-		System.out.println(file6.getName() + "ÀÇ Á¸Àç ¿©ºÎ : "+ file6.exists());
+		System.out.println(file6.getName() + "ì˜ ì¡´ì¬ ì—¬ë¶€ : "+ file6.exists());
 		System.out.println();
 		if(file6.mkdirs()) {
-			System.out.println(file6.getName() + " ¸¸µé±â ¼º°ø!!!");
+			System.out.println(file6.getName() + " ë§Œë“¤ê¸° ì„±ê³µ!!!");
 		}else {
-			System.out.println(file6.getName() + " ¸¸µé±â ½ÇÆĞ!!!");
+			System.out.println(file6.getName() + " ë§Œë“¤ê¸° ì‹¤íŒ¨!!!");
 		}
 	}
 

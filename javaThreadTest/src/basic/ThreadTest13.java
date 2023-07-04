@@ -6,24 +6,24 @@ import java.util.Collections;
 import java.util.List;
 
 /*
-	10¸¶¸®ÀÇ ¸»µéÀÌ °æÁÖÇÏ´Â °æ¸¶ ÇÁ·Î±×·¥ ÀÛ¼ºÇÏ±â...
+	10ë§ˆë¦¬ì˜ ë§ë“¤ì´ ê²½ì£¼í•˜ëŠ” ê²½ë§ˆ í”„ë¡œê·¸ë¨ ì‘ì„±í•˜ê¸°...
 	
-	¸»Àº Horse¶ó´Â ÀÌ¸§ÀÇ ¾²·¹µå Å¬·¡½º·Î ÀÛ¼ºÇÏ´Âµ¥ ÀÌ Å¬·¡½º´Â
-	¸»ÀÌ¸§(String), ÇöÀçÀ§Ä¡(int), µî¼ö(int)¸¦ ¸É¹öº¯¼ö·Î °®´Â´Ù.
-	±×¸®°í, ÀÌ Å¬·¡½º¿¡´Â µî¼ö¸¦ ¿À¸§Â÷¼øÀ¸·Î Ã³¸®ÇÒ ¼ö ÀÖ´Â ³»ºÎ Á¤·Ä ±âÁØÀÌ ÀÖ´Ù.
-	(ComparableÀÎÅÍÆäÀÌ½º ±¸Çö)
+	ë§ì€ Horseë¼ëŠ” ì´ë¦„ì˜ ì“°ë ˆë“œ í´ë˜ìŠ¤ë¡œ ì‘ì„±í•˜ëŠ”ë° ì´ í´ë˜ìŠ¤ëŠ”
+	ë§ì´ë¦„(String), í˜„ì¬ìœ„ì¹˜(int), ë“±ìˆ˜(int)ë¥¼ ë§´ë²„ë³€ìˆ˜ë¡œ ê°–ëŠ”ë‹¤.
+	ê·¸ë¦¬ê³ , ì´ í´ë˜ìŠ¤ì—ëŠ” ë“±ìˆ˜ë¥¼ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì²˜ë¦¬í•  ìˆ˜ ìˆëŠ” ë‚´ë¶€ ì •ë ¬ ê¸°ì¤€ì´ ìˆë‹¤.
+	(Comparableì¸í„°í˜ì´ìŠ¤ êµ¬í˜„)
 	
-	°æ±â ±¸°£Àº 1 ~ 50±¸°£À¸·Î µÇ¾î ÀÖ´Ù.
+	ê²½ê¸° êµ¬ê°„ì€ 1 ~ 50êµ¬ê°„ìœ¼ë¡œ ë˜ì–´ ìˆë‹¤.
 	
-	°æ±â°¡ ³¡³ª¸é µî¼ö ¼øÀ¸·Î Ãâ·ÂÇÑ´Ù. (³»ºÎÁ¤·Ä±âÁØ)
+	ê²½ê¸°ê°€ ëë‚˜ë©´ ë“±ìˆ˜ ìˆœìœ¼ë¡œ ì¶œë ¥í•œë‹¤. (ë‚´ë¶€ì •ë ¬ê¸°ì¤€)
 	
-	±×¸®°í °æ±â Áß Áß°£ Áß°£¿¡ °¢ ¸»µéÀÇ ÇöÀç À§Ä¡¸¦ ¾Æ·¡¿Í °°ÀÌ ³ªÅ¸³»½Ã¿À...
-	¾Æ·¡)
+	ê·¸ë¦¬ê³  ê²½ê¸° ì¤‘ ì¤‘ê°„ ì¤‘ê°„ì— ê° ë§ë“¤ì˜ í˜„ì¬ ìœ„ì¹˜ë¥¼ ì•„ë˜ì™€ ê°™ì´ ë‚˜íƒ€ë‚´ì‹œì˜¤...
+	ì•„ë˜)
 	
-	01¹ø¸» : ----->---------------------------------------- (ÇÑ ±¸°£¿¡ - Ç¥½Ã ÇÏ³ª¾¿)
-	02¹ø¸» : --------->------------------------------------
+	01ë²ˆë§ : ----->---------------------------------------- (í•œ êµ¬ê°„ì— - í‘œì‹œ í•˜ë‚˜ì”©)
+	02ë²ˆë§ : --------->------------------------------------
 	...
-	10¹ø¸» : -->-------------------------------------------
+	10ë²ˆë§ : -->-------------------------------------------
 				
  */
 /*
@@ -33,9 +33,9 @@ public class ThreadTest13 {
 		List<Horse> horse=new ArrayList<>();
 		
 		for(int i=0; i<9; i++) {
-			horse.add(new Horse("0"+(i+1)+"¹ø¸»"));
+			horse.add(new Horse("0"+(i+1)+"ë²ˆë§"));
 		}
-		horse.add(new Horse("10¹ø¸»"));
+		horse.add(new Horse("10ë²ˆë§"));
 		
 		for(int i=0; i<horse.size(); i++) {
 			horse.get(i).start();
@@ -141,13 +141,13 @@ class Horse extends Thread implements Comparable<Horse>{
 }
 */
 
-//¼±»ı´Ô´ä
+//ì„ ìƒë‹˜ë‹µ
 public class ThreadTest13 {
 
 	public static void main(String[] args) {
 		Horse[] horseArr = new Horse[] {
-				new Horse("01¹ø¸»"), new Horse("02¹ø¸»"), new Horse("03¹ø¸»"), new Horse("04¹ø¸»"), new Horse("05¹ø¸»"),
-				new Horse("06¹ø¸»"), new Horse("07¹ø¸»"), new Horse("08¹ø¸»"), new Horse("09¹ø¸»"), new Horse("10¹ø¸»")
+				new Horse("01ë²ˆë§"), new Horse("02ë²ˆë§"), new Horse("03ë²ˆë§"), new Horse("04ë²ˆë§"), new Horse("05ë²ˆë§"),
+				new Horse("06ë²ˆë§"), new Horse("07ë²ˆë§"), new Horse("08ë²ˆë§"), new Horse("09ë²ˆë§"), new Horse("10ë²ˆë§")
 		};
 		
 		GameState gs= new GameState(horseArr);
@@ -156,9 +156,9 @@ public class ThreadTest13 {
 			h.start();
 		}
 		
-		gs.start();		//¸»µéÀÇ °æÁÖ »óÅÂ¸¦ Ãâ·ÂÇÏ´Â ¾²·¹µå ½ÃÀÛ
+		gs.start();		//ë§ë“¤ì˜ ê²½ì£¼ ìƒíƒœë¥¼ ì¶œë ¥í•˜ëŠ” ì“°ë ˆë“œ ì‹œì‘
 		
-		//¸ğµç ¸»µéÀÇ °æÁÖ°¡ ³¡³¯ ¶§±îÁö ±â´Ù¸°´Ù..
+		//ëª¨ë“  ë§ë“¤ì˜ ê²½ì£¼ê°€ ëë‚  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤..
 		for(Horse h : horseArr) {
 			try {
 				h.join();
@@ -173,17 +173,17 @@ public class ThreadTest13 {
 		}
 			
 		System.out.println();
-		System.out.println("°æ±â ³¡...");
+		System.out.println("ê²½ê¸° ë...");
 		System.out.println();
 		
-		System.out.println("== °æ±â °á°ú ==");
+		System.out.println("== ê²½ê¸° ê²°ê³¼ ==");
 		
 		/*
-		//¹è¿­ Á¤·Ä ±â´É => Arrays.sort(¹è¿­);
+		//ë°°ì—´ ì •ë ¬ ê¸°ëŠ¥ => Arrays.sort(ë°°ì—´);
 		Arrays.sort(horseArr);
 		*/
 		
-		//¹è¿­À» ¸®½ºÆ®·Î ¹Ù²ã¼­ Collections.sort() ¾²±â
+		//ë°°ì—´ì„ ë¦¬ìŠ¤íŠ¸ë¡œ ë°”ê¿”ì„œ Collections.sort() ì“°ê¸°
 		ArrayList<Horse> horseList = new ArrayList<Horse>();
 		for(Horse h : horseArr){
 			horseList.add(h);
@@ -196,31 +196,31 @@ public class ThreadTest13 {
 	}
 }
 
-// ¸»ÀÇ ÇöÀç À§Ä¡¸¦ ³ªÅ¸³»´Â ¾²·¹µå
+// ë§ì˜ í˜„ì¬ ìœ„ì¹˜ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì“°ë ˆë“œ
 class GameState extends Thread{
 	private Horse[] horseArr;
 
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public GameState(Horse[] horseArr) {
 		this.horseArr = horseArr;
 	}
 	
 	@Override
-	public void run() {		//currentRank´Â °íÁ¤ÀûÀÓ => ¸»ÀÌ Ãß°¡µÇ¸é °íÃÄ¾ßÇÔ ==>¹è¿­ÀÇ °¹¼ö¸¦ ±¸ÇÔ
+	public void run() {		//currentRankëŠ” ê³ ì •ì ì„ => ë§ì´ ì¶”ê°€ë˜ë©´ ê³ ì³ì•¼í•¨ ==>ë°°ì—´ì˜ ê°¯ìˆ˜ë¥¼ êµ¬í•¨
 		while(true) {
-			// ¸ğµç ¸»µéÀÇ °æ±â°¡ Á¾·áµÇ¾ú´ÂÁö ¿©ºÎ °Ë»ç
+			// ëª¨ë“  ë§ë“¤ì˜ ê²½ê¸°ê°€ ì¢…ë£Œë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ ê²€ì‚¬
 			if(Horse.currentRank==horseArr.length) {
 				break;
 			}
-			for(int i=1; i<15; i++) {	//°ø¹éÃâ·Â
+			for(int i=1; i<15; i++) {	//ê³µë°±ì¶œë ¥
 				System.out.println();
 			}
 			
 			for(int i=0; i<horseArr.length; i++) {
 				System.out.print(horseArr[i].getHorseName()+" : ");
 				
-				for(int j=1; j<=50; j++) {	//Horse Å¬·¡½º run¸Ş¼Òµå¿¡¼­ j°ª ¸ÂÃçÁà¾ßÇÔ
-					//¸»ÀÇ ÇöÀç À§Ä¡¿¡´Â '>'·Î Ç¥½ÃÇÏ±â
+				for(int j=1; j<=50; j++) {	//Horse í´ë˜ìŠ¤ runë©”ì†Œë“œì—ì„œ jê°’ ë§ì¶°ì¤˜ì•¼í•¨
+					//ë§ì˜ í˜„ì¬ ìœ„ì¹˜ì—ëŠ” '>'ë¡œ í‘œì‹œí•˜ê¸°
 					if(horseArr[i].getLocation() == j) {
 						System.out.print(">");
 					}else {
@@ -240,15 +240,15 @@ class GameState extends Thread{
 	
 }
 
-//HorseÅ¬·¡½º ÀÛ¼º
+//Horseí´ë˜ìŠ¤ ì‘ì„±
 class Horse extends Thread implements Comparable<Horse>{
-	public static int currentRank = 0;		//¸»µéÀÌ °øÅëÀ¸·Î »ç¿ëÇÒ º¯¼ö(ÇöÀç±îÁöÀÇ ¸»µéÀÇ µî¼ö¸¦ ³ªÅ¸³½´Ù.)
+	public static int currentRank = 0;		//ë§ë“¤ì´ ê³µí†µìœ¼ë¡œ ì‚¬ìš©í•  ë³€ìˆ˜(í˜„ì¬ê¹Œì§€ì˜ ë§ë“¤ì˜ ë“±ìˆ˜ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.)
 	
-	private String horseName;		//¸»ÀÌ¸§
-	private int location;			//ÇöÀç À§Ä¡
-	private int rank;				//µî¼ö
+	private String horseName;		//ë§ì´ë¦„
+	private int location;			//í˜„ì¬ ìœ„ì¹˜
+	private int rank;				//ë“±ìˆ˜
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public Horse(String horseName) {
 		this.horseName = horseName;
 	}
@@ -279,13 +279,13 @@ class Horse extends Thread implements Comparable<Horse>{
 
 	@Override
 	public String toString() {
-		return "°æÁÖ¸¶ " + horseName + "Àº " + rank + "µî ÀÔ´Ï´Ù...";
+		return "ê²½ì£¼ë§ˆ " + horseName + "ì€ " + rank + "ë“± ì…ë‹ˆë‹¤...";
 	}
 	
 	@Override
 	public void run() {
 		for(int i=1; i<=50; i++) {
-			this.location = i;		//¸»ÀÇ ÇöÀç À§Ä¡ ÀúÀå
+			this.location = i;		//ë§ì˜ í˜„ì¬ ìœ„ì¹˜ ì €ì¥
 			
 			try {
 				Thread.sleep((int)(Math.random() * 500));
@@ -294,12 +294,12 @@ class Horse extends Thread implements Comparable<Horse>{
 			}
 		}
 		
-		//ÇÑ ¸¶¸®ÀÇ ¸»ÀÇ °æÁÖ°¡ ³¡³ª¸é ÇöÀç µî¼ö¸¦ ±¸ÇØ¼­ ÀúÀåÇÑ´Ù.
+		//í•œ ë§ˆë¦¬ì˜ ë§ì˜ ê²½ì£¼ê°€ ëë‚˜ë©´ í˜„ì¬ ë“±ìˆ˜ë¥¼ êµ¬í•´ì„œ ì €ì¥í•œë‹¤.
 		currentRank++;
 		this.rank = currentRank;
 	}
 
-	//µî¼öÀÇ ¿À¸§Â÷¼ø ³»ºÎ Á¤·Ä ±âÁØ ¸¸µé±â
+	//ë“±ìˆ˜ì˜ ì˜¤ë¦„ì°¨ìˆœ ë‚´ë¶€ ì •ë ¬ ê¸°ì¤€ ë§Œë“¤ê¸°
 	@Override
 	public int compareTo(Horse horse) {
 		return Integer.compare(this.rank, horse.getRank());

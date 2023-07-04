@@ -1,11 +1,11 @@
 package basic;
 
 /*
- * ¹®Á¦1) 5¸íÀÇ º°¸íÀ» ÀÔ·Â¹Þ¾Æ ArrayList¿¡ ÀúÀåÇÏ°í ÀÌµé Áß º°¸íÀÇ ±æÀÌ°¡ Á¦ÀÏ ±ä
- * 		º°¸íÀ» Ãâ·ÂÇÏ½Ã¿À.(´Ü, º°¸íÀÇ ±æÀÌ´Â ¸ðµÎ ´Ù¸£°Ô ÀÔ·ÂÇÑ´Ù.)
+ * ë¬¸ì œ1) 5ëª…ì˜ ë³„ëª…ì„ ìž…ë ¥ë°›ì•„ ArrayListì— ì €ìž¥í•˜ê³  ì´ë“¤ ì¤‘ ë³„ëª…ì˜ ê¸¸ì´ê°€ ì œì¼ ê¸´
+ * 		ë³„ëª…ì„ ì¶œë ¥í•˜ì‹œì˜¤.(ë‹¨, ë³„ëª…ì˜ ê¸¸ì´ëŠ” ëª¨ë‘ ë‹¤ë¥´ê²Œ ìž…ë ¥í•œë‹¤.)
  * 
- * ¹®Á¦2) 5¸íÀÇ º°¸íÀ» ÀÔ·Â¹Þ¾Æ ArrayList¿¡ ÀúÀåÇÏ°í ÀÌµé Áß º°¸íÀÇ ±æÀÌ°¡ Á¦ÀÏ ±ä
- * 		º°¸íÀ» Ãâ·ÂÇÏ½Ã¿À.(´Ü, º°¸íÀÇ ±æÀÌ°¡ °°À» ¼ö ÀÖ´Ù.)
+ * ë¬¸ì œ2) 5ëª…ì˜ ë³„ëª…ì„ ìž…ë ¥ë°›ì•„ ArrayListì— ì €ìž¥í•˜ê³  ì´ë“¤ ì¤‘ ë³„ëª…ì˜ ê¸¸ì´ê°€ ì œì¼ ê¸´
+ * 		ë³„ëª…ì„ ì¶œë ¥í•˜ì‹œì˜¤.(ë‹¨, ë³„ëª…ì˜ ê¸¸ì´ê°€ ê°™ì„ ìˆ˜ ìžˆë‹¤.)
  */
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class ArrayListTest03 {
 		Scanner sc=new Scanner(System.in);
 		ArrayList<String> list = new ArrayList<>();
 		for(int i=0; i<5; i++) {
-			System.out.print("º°¸í ÀÔ·Â : ");
+			System.out.print("ë³„ëª… ìž…ë ¥ : ");
 			list.add(sc.nextLine());
 		}
 		
@@ -41,7 +41,7 @@ public class ArrayListTest03 {
 				maxAlias = list.get(i);
 		}
 		
-		System.out.println("Á¦ÀÏ ±ä º°¸í >>"+maxAlias);
+		System.out.println("ì œì¼ ê¸´ ë³„ëª… >>"+maxAlias);
 		
 	}
 

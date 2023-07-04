@@ -3,7 +3,7 @@ package basic;
 public class ThreadTest01 {
 
 	public static void main(String[] args) {
-		//½Ì±Û¾²·¹µå
+		//ì‹±ê¸€ì“°ë ˆë“œ
 		for(int i=1; i<=200; i++) {
 			System.out.print("*");
 		}

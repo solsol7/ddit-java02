@@ -7,26 +7,26 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /*
- 	ÄÄÇ»ÅÍ¿Í °¡À§ ¹ÙÀ§ º¸¸¦ ÁøÇàÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+ 	ì»´í“¨í„°ì™€ ê°€ìœ„ ë°”ìœ„ ë³´ë¥¼ ì§„í–‰í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
  	
- 	ÄÄÇ»ÅÍÀÇ °¡À§ ¹ÙÀ§ º¸´Â ³­¼ö¸¦ ÀÌ¿ëÇÏ¿© ±¸ÇÏ°í,
- 	»ç¿ëÀÚÀÇ ÀÔ·ÂÀº showInputDialog()¸Ş¼­µå¸¦ ÀÌ¿ëÇØ¼­ ÀÔ·Â ¹Ş´Â´Ù.
+ 	ì»´í“¨í„°ì˜ ê°€ìœ„ ë°”ìœ„ ë³´ëŠ” ë‚œìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ êµ¬í•˜ê³ ,
+ 	ì‚¬ìš©ìì˜ ì…ë ¥ì€ showInputDialog()ë©”ì„œë“œë¥¼ ì´ìš©í•´ì„œ ì…ë ¥ ë°›ëŠ”ë‹¤.
  	
- 	ÀÔ·Â ½Ã°£Àº 5ÃÊ·Î Á¦ÇÑÇÏ°í Ä«¿îÆ® ´Ù¿îÀ» ÁøÇàÇÑ´Ù.
- 	5ÃÊ ¾È¿¡ ÀÔ·ÂÀÌ ¾øÀ¸¸é °ÔÀÓ Áø °ÍÀ¸·Î Ã³¸®ÇÏ°í ÇÁ·Î±×·¥À» ¸ØÃá´Ù.
+ 	ì…ë ¥ ì‹œê°„ì€ 5ì´ˆë¡œ ì œí•œí•˜ê³  ì¹´ìš´íŠ¸ ë‹¤ìš´ì„ ì§„í–‰í•œë‹¤.
+ 	5ì´ˆ ì•ˆì— ì…ë ¥ì´ ì—†ìœ¼ë©´ ê²Œì„ ì§„ ê²ƒìœ¼ë¡œ ì²˜ë¦¬í•˜ê³  í”„ë¡œê·¸ë¨ì„ ë©ˆì¶˜ë‹¤.
  	
- 	5ÃÊ ¾È¿¡ ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é ½ÂÆĞ¸¦ ±¸ÇØ¼­ Ãâ·ÂÇÑ´Ù.
+ 	5ì´ˆ ì•ˆì— ì…ë ¥ì´ ì™„ë£Œë˜ë©´ ìŠ¹íŒ¨ë¥¼ êµ¬í•´ì„œ ì¶œë ¥í•œë‹¤.
  	
- 	°á°ú ¿¹½Ã)
- 	1. 5ÃÊ ¾È¿¡ ÀÔ·ÂÀ» ¸øÇßÀ» °æ¿ì
- 	 -- °á °ú --
- 	 ½Ã°£ ÃÊ°ú·Î ´ç½ÅÀÌ Á³½À´Ï´Ù...
+ 	ê²°ê³¼ ì˜ˆì‹œ)
+ 	1. 5ì´ˆ ì•ˆì— ì…ë ¥ì„ ëª»í–ˆì„ ê²½ìš°
+ 	 -- ê²° ê³¼ --
+ 	 ì‹œê°„ ì´ˆê³¼ë¡œ ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...
  	 
- 	2. 5ÃÊ ¾È¿¡ ÀÔ·ÂÇßÀ» °æ¿ì
- 	 -- °á °ú --
- 	 ÄÄÇ»ÅÍ : °¡À§
- 	 »ç¿ëÀÚ : ¹ÙÀ§
- 	 °á °ú : ´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù... / Á³½À´Ï´Ù... / ºñ°å½À´Ï´Ù...
+ 	2. 5ì´ˆ ì•ˆì— ì…ë ¥í–ˆì„ ê²½ìš°
+ 	 -- ê²° ê³¼ --
+ 	 ì»´í“¨í„° : ê°€ìœ„
+ 	 ì‚¬ìš©ì : ë°”ìœ„
+ 	 ê²° ê³¼ : ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤... / ì¡ŒìŠµë‹ˆë‹¤... / ë¹„ê²¼ìŠµë‹ˆë‹¤...
  
  */
 /*
@@ -55,7 +55,7 @@ class Count extends Thread {
 			}
 		} catch (InterruptedException e) {
 		}
-		System.out.println("½Ã°£ ÃÊ°ú·Î ´ç½ÅÀÌ Á³½À´Ï´Ù...");
+		System.out.println("ì‹œê°„ ì´ˆê³¼ë¡œ ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...");
 		System.exit(0);
 	}
 }
@@ -69,55 +69,55 @@ class UserResult extends Thread {
 		int i = (int) (Math.random() * 3);
 		switch (i) {
 		case 0:
-			comResult = "°¡À§";
+			comResult = "ê°€ìœ„";
 			break;
 		case 1:
-			comResult = "¹ÙÀ§ ";
+			comResult = "ë°”ìœ„ ";
 			break;
 		case 2:
-			comResult = "º¸";
+			comResult = "ë³´";
 			break;
 		}
 	}
 
 	@Override
 	public void run() {
-		String userResult = JOptionPane.showInputDialog("ÀÔ·Â(°¡À§, ¹ÙÀ§, º¸)");
+		String userResult = JOptionPane.showInputDialog("ì…ë ¥(ê°€ìœ„, ë°”ìœ„, ë³´)");
 		inputCheck = true;
-		if (!(userResult.equals("°¡À§") || userResult.equals("¹ÙÀ§") || userResult.equals("º¸"))) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+		if (!(userResult.equals("ê°€ìœ„") || userResult.equals("ë°”ìœ„") || userResult.equals("ë³´"))) {
+			System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 			return;
 		}
 
-		System.out.println(" -- °á °ú -- ");
-		System.out.println("ÄÄÇ»ÅÍ : " + comResult);
-		System.out.println("»ç¿ëÀÚ : " + userResult);
+		System.out.println(" -- ê²° ê³¼ -- ");
+		System.out.println("ì»´í“¨í„° : " + comResult);
+		System.out.println("ì‚¬ìš©ì : " + userResult);
 		switch (userResult) {
-		case "°¡À§":
-			if (comResult.equals("°¡À§")) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
-			} else if (comResult.equals("¹ÙÀ§")) {
-				System.out.println("´ç½ÅÀÌ Á³½À´Ï´Ù...");
-			} else if (comResult.equals("º¸")) {
-				System.out.println("´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù...");
+		case "ê°€ìœ„":
+			if (comResult.equals("ê°€ìœ„")) {
+				System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
+			} else if (comResult.equals("ë°”ìœ„")) {
+				System.out.println("ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...");
+			} else if (comResult.equals("ë³´")) {
+				System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤...");
 			}
 			break;
-		case "¹ÙÀ§":
-			if (comResult.equals("°¡À§")) {
-				System.out.println("´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù...");
-			} else if (comResult.equals("¹ÙÀ§")) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
-			} else if (comResult.equals("º¸")) {
-				System.out.println("´ç½ÅÀÌ Á³½À´Ï´Ù...");
+		case "ë°”ìœ„":
+			if (comResult.equals("ê°€ìœ„")) {
+				System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤...");
+			} else if (comResult.equals("ë°”ìœ„")) {
+				System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
+			} else if (comResult.equals("ë³´")) {
+				System.out.println("ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...");
 			}
 			break;
-		case "º¸":
-			if (comResult.equals("°¡À§")) {
-				System.out.println("´ç½ÅÀÌ Á³½À´Ï´Ù...");
-			} else if (comResult.equals("¹ÙÀ§")) {
-				System.out.println("´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù...");
-			} else if (comResult.equals("º¸")) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
+		case "ë³´":
+			if (comResult.equals("ê°€ìœ„")) {
+				System.out.println("ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...");
+			} else if (comResult.equals("ë°”ìœ„")) {
+				System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤...");
+			} else if (comResult.equals("ë³´")) {
+				System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
 			}
 			break;
 		}
@@ -126,65 +126,65 @@ class UserResult extends Thread {
 
 */
 
-//¼±»ı´Ô´ä
+//ì„ ìƒë‹˜ë‹µ
 public class ThreadTest07 {
-	//ÀÔ·Â ¿©ºÎ¸¦ ³ªÅ¸³»´Â º¯¼ö ¼±¾ğ
+	//ì…ë ¥ ì—¬ë¶€ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë³€ìˆ˜ ì„ ì–¸
 	public static boolean inputCheck;
 	
 	public static void main(String[] args) {
 		GameTimer gt=new GameTimer();
 		
-		//³­¼ö¸¦ ÀÌ¿ëÇØ¼­ ÄÄÇ»ÅÍÀÇ °¡À§ ¹ÙÀ§ º¸ Á¤ÇÏ±â
-		String[] data = {"°¡À§","¹ÙÀ§","º¸"};
-		int index = (int)(Math.random()*3);	//0~2»çÀÌÀÇ ³­¼ö ¸¸µé±â
+		//ë‚œìˆ˜ë¥¼ ì´ìš©í•´ì„œ ì»´í“¨í„°ì˜ ê°€ìœ„ ë°”ìœ„ ë³´ ì •í•˜ê¸°
+		String[] data = {"ê°€ìœ„","ë°”ìœ„","ë³´"};
+		int index = (int)(Math.random()*3);	//0~2ì‚¬ì´ì˜ ë‚œìˆ˜ ë§Œë“¤ê¸°
 		String com = data[index];
 		
-		// »ç¿ëÀÚ·ÎºÎÅÍ °¡À§ ¹ÙÀ§ º¸ ÀÔ·Â ¹Ş±â
+		// ì‚¬ìš©ìë¡œë¶€í„° ê°€ìœ„ ë°”ìœ„ ë³´ ì…ë ¥ ë°›ê¸°
 		gt.start();
 		String man = null;
 		do {			
-			man = JOptionPane.showInputDialog("°¡À§ ¹ÙÀ§ º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-//		}while(!(man.equals("°¡À§")||man.equals("¹ÙÀ§")||man.equals("º¸")));
-		}while(!man.equals("°¡À§") && !man.equals("¹ÙÀ§") && !man.equals("º¸"));
-		//ÀüÃ¼¿¡ !¾ÈºÙÀÌ°í °³º°ÀûÀ¸·Î ºÙÀÌ°í½ÍÀ¸¸é ÀüÃ¼!¿¡¼­ ||´Â &&·Î &&´Â ||·Î ¹Ù²Ù°í ÀüÃ¼¿¡ ! ºÙÀÌ±â
+			man = JOptionPane.showInputDialog("ê°€ìœ„ ë°”ìœ„ ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+//		}while(!(man.equals("ê°€ìœ„")||man.equals("ë°”ìœ„")||man.equals("ë³´")));
+		}while(!man.equals("ê°€ìœ„") && !man.equals("ë°”ìœ„") && !man.equals("ë³´"));
+		//ì „ì²´ì— !ì•ˆë¶™ì´ê³  ê°œë³„ì ìœ¼ë¡œ ë¶™ì´ê³ ì‹¶ìœ¼ë©´ ì „ì²´!ì—ì„œ ||ëŠ” &&ë¡œ &&ëŠ” ||ë¡œ ë°”ê¾¸ê³  ì „ì²´ì— ! ë¶™ì´ê¸°
 		inputCheck = true;
 		
-		//°á°ú ÆÇÁ¤ÇÏ±â
+		//ê²°ê³¼ íŒì •í•˜ê¸°
 		String result = "";
 		/*
 		if(man.equals(com)) {
-			result = "ºñ°å½À´Ï´Ù...";
-		}else if(man.equals("°¡À§") && com.equals("º¸") ||
-				man.equals("¹ÙÀ§") &com.equals("°¡À§") ||
-				man.equals("º¸") && com.equals("¹ÙÀ§")) {
-			result = "´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù...";
+			result = "ë¹„ê²¼ìŠµë‹ˆë‹¤...";
+		}else if(man.equals("ê°€ìœ„") && com.equals("ë³´") ||
+				man.equals("ë°”ìœ„") &com.equals("ê°€ìœ„") ||
+				man.equals("ë³´") && com.equals("ë°”ìœ„")) {
+			result = "ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤...";
 		}else {
-			result = "´ç½ÅÀÌ Á³½À´Ï´Ù...";
+			result = "ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...";
 		}
 		*/
 		
 		switch (man + com) {
-		case "°¡À§°¡À§":
-		case "°¡À§¹ÙÀ§":
-		case "º¸º¸": result= "ºñ°å½À´Ï´Ù..."; break;
-		case "°¡À§º¸":
-		case "¹ÙÀ§°¡À§":
-		case "º¸¹ÙÀ§": result = "´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù..."; break;
-		default : result = "´ç½ÅÀÌ Á³½À´Ï´Ù...";
+		case "ê°€ìœ„ê°€ìœ„":
+		case "ê°€ìœ„ë°”ìœ„":
+		case "ë³´ë³´": result= "ë¹„ê²¼ìŠµë‹ˆë‹¤..."; break;
+		case "ê°€ìœ„ë³´":
+		case "ë°”ìœ„ê°€ìœ„":
+		case "ë³´ë°”ìœ„": result = "ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤..."; break;
+		default : result = "ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...";
 		}
 		
-		// °á°ú Ãâ·Â
-		System.out.println(" -- °á °ú --");
-		System.out.println("ÄÄÇ»ÅÍ : "+com);
-		System.out.println(("»ç¿ëÀÚ : "+man));
-		System.out.println("°á°ú : "+result);
+		// ê²°ê³¼ ì¶œë ¥
+		System.out.println(" -- ê²° ê³¼ --");
+		System.out.println("ì»´í“¨í„° : "+com);
+		System.out.println(("ì‚¬ìš©ì : "+man));
+		System.out.println("ê²°ê³¼ : "+result);
 	}
 }
 
 class GameTimer extends Thread{
 	@Override
 	public void run() {
-		System.out.println("Ä«¿îÆ® ´Ù¿î ½ÃÀÛ...");
+		System.out.println("ì¹´ìš´íŠ¸ ë‹¤ìš´ ì‹œì‘...");
 		for(int i=5; i>=1; i--) {
 			System.out.println(i);
 			try {
@@ -197,8 +197,8 @@ class GameTimer extends Thread{
 			}
 		}
 		
-		System.out.println(" -- °á °ú --");
-		System.out.println("½Ã°£ÃÊ°ú·Î ´ç½ÅÀÌ Á³½À´Ï´Ù...");
+		System.out.println(" -- ê²° ê³¼ --");
+		System.out.println("ì‹œê°„ì´ˆê³¼ë¡œ ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤...");
 		System.exit(0);
 
 	}

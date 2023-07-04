@@ -1,12 +1,12 @@
 package basic;
-//µ¿±âÈ­
-//¸Ş¼­µå1À» ½ÇÇàÇÏ´Â ¼ø°£ ¶ôÀÌ °É¸®°í ¸Ş¼­µå1ÀÌ ³¡³ª¸é ¶ôÀÌ Ç®¸°´Ù
-//´Ù¸¥ ¾²·¹µå´Â ¶ôÀÌ Ç®¸±¶§±îÁö ±â´Ù¸² = ¸Ş¼­µå1ÀÌ Á¤»óÀûÀ¸·Î ³¡³ª¸é ¸Ş¼­µå 1Àº ÀÚ½ÅÀ» È£ÃâÇß´ø °÷À¸·Î µ¹¾Æ°¡¸é¼­ ¶ôÀ» Ç®¾îÁÜ
-//ºÎºĞÀûÀ¸·Î ¶ô°É±â => synchronized(¶ô °É °´Ã¼)ºí·Ï »ç¿ë => µ¿±âÈ­¿µ¿ª µû·Î ¸¸µé±â
+//ë™ê¸°í™”
+//ë©”ì„œë“œ1ì„ ì‹¤í–‰í•˜ëŠ” ìˆœê°„ ë½ì´ ê±¸ë¦¬ê³  ë©”ì„œë“œ1ì´ ëë‚˜ë©´ ë½ì´ í’€ë¦°ë‹¤
+//ë‹¤ë¥¸ ì“°ë ˆë“œëŠ” ë½ì´ í’€ë¦´ë•Œê¹Œì§€ ê¸°ë‹¤ë¦¼ = ë©”ì„œë“œ1ì´ ì •ìƒì ìœ¼ë¡œ ëë‚˜ë©´ ë©”ì„œë“œ 1ì€ ìì‹ ì„ í˜¸ì¶œí–ˆë˜ ê³³ìœ¼ë¡œ ëŒì•„ê°€ë©´ì„œ ë½ì„ í’€ì–´ì¤Œ
+//ë¶€ë¶„ì ìœ¼ë¡œ ë½ê±¸ê¸° => synchronized(ë½ ê±¸ ê°ì²´)ë¸”ë¡ ì‚¬ìš© => ë™ê¸°í™”ì˜ì—­ ë”°ë¡œ ë§Œë“¤ê¸°
 public class ThreadTest15 {
 
 	public static void main(String[] args) {
-		ShareObject sObj = new ShareObject();	//°øÅë °´Ã¼ »ı¼º
+		ShareObject sObj = new ShareObject();	//ê³µí†µ ê°ì²´ ìƒì„±
 		
 		TestThread th1 = new TestThread("Test1", sObj);
 		TestThread th2 = new TestThread("Test2", sObj);
@@ -20,26 +20,26 @@ public class ThreadTest15 {
 class TestThread extends Thread{
 	private ShareObject sObj;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public TestThread(String name, ShareObject sObj) {
-		super(name);	//¾²·¹µå¿¡¼­ ¹®ÀÚ¿­À» °ıÈ£¿¡ ³Ö¾î¼­ ºÎ¸ğ »ı¼ºÀÚ¸¦ »ı¼ºÇÏ¸é ¾²·¹µå ÀÌ¸§À» ¼³Á¤ÇÏ´Â°ÍÀÌ´Ù.
+		super(name);	//ì“°ë ˆë“œì—ì„œ ë¬¸ìì—´ì„ ê´„í˜¸ì— ë„£ì–´ì„œ ë¶€ëª¨ ìƒì„±ìë¥¼ ìƒì„±í•˜ë©´ ì“°ë ˆë“œ ì´ë¦„ì„ ì„¤ì •í•˜ëŠ”ê²ƒì´ë‹¤.
 		this.sObj = sObj;
 	}
 	
 	@Override
 	public void run() {
 		for(int i=1; i<=10; i++) {
-			sObj.add();		//(sObjÀÇ add¸Ş¼Òµå È£Ãâ)
+			sObj.add();		//(sObjì˜ addë©”ì†Œë“œ í˜¸ì¶œ)
 		}
 	}
 }
 
 
-//°øÅë Å¬·¡½º
+//ê³µí†µ í´ë˜ìŠ¤
 class ShareObject{
 	private int sum = 0;
 	
-	/*µ¿±âÈ­ Ã³¸®(X)
+	/*ë™ê¸°í™” ì²˜ë¦¬(X)
 	public void add() {
 		int n = sum;
 		
@@ -47,22 +47,22 @@ class ShareObject{
 		
 		sum=n;
 		
-		System.out.println(Thread.currentThread().getName() + " ÇÕ°è : " + sum);
+		System.out.println(Thread.currentThread().getName() + " í•©ê³„ : " + sum);
 	}
 	*/
 	
-	//µ¿±âÈ­Ã³¸® (O)
+	//ë™ê¸°í™”ì²˜ë¦¬ (O)
 	
-	//public synchronized void add() {	//¹æ¹ı 1) ¸Ş¼­µå¿¡ µ¿±âÈ­ ¼³Á¤À» ÇÑ´Ù.
+	//public synchronized void add() {	//ë°©ë²• 1) ë©”ì„œë“œì— ë™ê¸°í™” ì„¤ì •ì„ í•œë‹¤.
 	public synchronized void add() {
-		synchronized (this) {			//¹æ¹ı 2) µ¿±âÈ­ ºí·°À¸·Î ¼³Á¤ÇÑ´Ù. =>Áö±İÀº ÀÚ±âÀÚ½Å¿¡°Ô ¶ô °Ë
+		synchronized (this) {			//ë°©ë²• 2) ë™ê¸°í™” ë¸”ëŸ­ìœ¼ë¡œ ì„¤ì •í•œë‹¤. =>ì§€ê¸ˆì€ ìê¸°ìì‹ ì—ê²Œ ë½ ê²€
 			int n = sum;
 			
 			n+=10;
 			
 			sum=n;
 			
-			System.out.println(Thread.currentThread().getName() + " ÇÕ°è : " + sum);
+			System.out.println(Thread.currentThread().getName() + " í•©ê³„ : " + sum);
 	
 		}
 			}

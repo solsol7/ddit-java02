@@ -6,29 +6,29 @@ import java.util.List;
 import java.util.Vector;
 
 /*
-	Vector, Hashtableµî°ú °°ÀÌ ¿¹ÀüºÎÅÍ Á¸ÀçÇÏ´ø Collection°´Ã¼µéÀº
-	³»ºÎ¿¡ µ¿±âÈ­ Ã³¸®°¡ µÇ¾î ÀÖ´Ù.
+	Vector, Hashtableë“±ê³¼ ê°™ì´ ì˜ˆì „ë¶€í„° ì¡´ì¬í•˜ë˜ Collectionê°ì²´ë“¤ì€
+	ë‚´ë¶€ì— ë™ê¸°í™” ì²˜ë¦¬ê°€ ë˜ì–´ ìˆë‹¤.
 	
-	±×·±µ¥ »õ·Ó°Ô ±¸¼ºµÈ Collection °´Ã¼µéÀº µ¿±âÈ­ Ã³¸®°¡ µÇ¾îÀÖÁö ¾Ê´Ù.
-	±×·¡¼­, µ¿±âÈ­°¡ ÇÊ¿äÇÑ ÇÁ·Î±×·¥¿¡¼­ ÀÌ·± CollectionµéÀ» »ç¿ëÇÏ·Á¸é
-	µ¿±âÈ­ Ã³¸®¸¦ ÇÑ ÈÄ¿¡ »ç¿ëÇØ¾ß ÇÑ´Ù.
-	(¹æ¹ı => Collections°´Ã¼ÀÇ synchronized·Î ½ÃÀÛÇÏ´Â ¸Ş¼­µå ÀÌ¿ë)
+	ê·¸ëŸ°ë° ìƒˆë¡­ê²Œ êµ¬ì„±ëœ Collection ê°ì²´ë“¤ì€ ë™ê¸°í™” ì²˜ë¦¬ê°€ ë˜ì–´ìˆì§€ ì•Šë‹¤.
+	ê·¸ë˜ì„œ, ë™ê¸°í™”ê°€ í•„ìš”í•œ í”„ë¡œê·¸ë¨ì—ì„œ ì´ëŸ° Collectionë“¤ì„ ì‚¬ìš©í•˜ë ¤ë©´
+	ë™ê¸°í™” ì²˜ë¦¬ë¥¼ í•œ í›„ì— ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+	(ë°©ë²• => Collectionsê°ì²´ì˜ synchronizedë¡œ ì‹œì‘í•˜ëŠ” ë©”ì„œë“œ ì´ìš©)
  */
 
 public class ThreadTest17 {
 	public static Vector<Integer> vec=new Vector<>();
 	
-	//µ¿±âÈ­ Ã³¸®°¡ µÇÁö ¾ÊÀº List
+	//ë™ê¸°í™” ì²˜ë¦¬ê°€ ë˜ì§€ ì•Šì€ List
 	public static List<Integer> list = new ArrayList<Integer>();
 	
-	//µ¿±âÈ­ Ã³¸®¸¦ ÇÑ °æ¿ì
+	//ë™ê¸°í™” ì²˜ë¦¬ë¥¼ í•œ ê²½ìš°
 	public static List<Integer> list2 = Collections.synchronizedList(new ArrayList<Integer>());
 	
 	public static void main(String[] args) {
 		
 		
 		//--------------------------------------------
-		//ÀÍ¸í±¸ÇöÃ¼
+		//ìµëª…êµ¬í˜„ì²´
 		Runnable r= new Runnable() {
 			
 			@Override
@@ -41,7 +41,7 @@ public class ThreadTest17 {
 				/*
 				for(int i=0; i<10000; i++) {
 					list.add(i);
-					//µ¥ÀÌÅÍ°¡ Á¤ÇÑ Å©±â¸¦ ³Ñ¾î°¡¸é -> ´õ Å« »õ·Î¿î ¹è¿­ ¸¸µé°í ¿ø·¡ÀÇ µ¥ÀÌÅÍ¸¦ »õ·Î ¸¸µç°÷¿¡ ¿Å±â°í Ãß°¡ÇÔ -> ±× °úÁ¤¿¡¼­ ¿À·ù³²
+					//ë°ì´í„°ê°€ ì •í•œ í¬ê¸°ë¥¼ ë„˜ì–´ê°€ë©´ -> ë” í° ìƒˆë¡œìš´ ë°°ì—´ ë§Œë“¤ê³  ì›ë˜ì˜ ë°ì´í„°ë¥¼ ìƒˆë¡œ ë§Œë“ ê³³ì— ì˜®ê¸°ê³  ì¶”ê°€í•¨ -> ê·¸ ê³¼ì •ì—ì„œ ì˜¤ë¥˜ë‚¨
 				}
 				*/
 				for(int i=0; i<10000; i++) {
@@ -67,8 +67,8 @@ public class ThreadTest17 {
 			}
 		}
 		
-		System.out.println("vecÀÇ °³¼ö : "+vec.size());
-		System.out.println("listÀÇ °³¼ö : "+list2.size());
+		System.out.println("vecì˜ ê°œìˆ˜ : "+vec.size());
+		System.out.println("listì˜ ê°œìˆ˜ : "+list2.size());
 	}
 
 }

@@ -6,13 +6,13 @@ public class FileTest02 {
 
 	public static void main(String[] args) {
 		File f1 = new File("d:/d_other/test.txt");
-		System.out.println(f1.getName() + "ÀÇ ÆÄÀÏ Å©±â : " + f1.length() + "bytes");
+		System.out.println(f1.getName() + "ì˜ íŒŒì¼ í¬ê¸° : " + f1.length() + "bytes");
 		System.out.println();
 		
 		System.out.println("path : "+f1.getPath());
 		System.out.println("absolutePath : "+f1.getAbsolutePath());
 		
-		// ÀÌÅ¬¸³½º¸¦ ÀÌ¿ëÇÏ¿© JAVAÇÁ·Î±×·¥À» ½ÇÇàÇÏ¸é ½ÇÇàµÈ JAVAÇÁ·Î±×·¥ÀÌ ¼Ò¼ÓµÈ projectÆú´õ°¡ ÇöÀç Æú´õ°¡ µÈ´Ù.
+		// ì´í´ë¦½ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ JAVAí”„ë¡œê·¸ë¨ì„ ì‹¤í–‰í•˜ë©´ ì‹¤í–‰ëœ JAVAí”„ë¡œê·¸ë¨ì´ ì†Œì†ëœ projectí´ë”ê°€ í˜„ì¬ í´ë”ê°€ ëœë‹¤.
 		File f2 = new File(".");
 		System.out.println("path : "+ f2.getPath());
 		System.out.println("absolutePath : "+ f2.getAbsolutePath());

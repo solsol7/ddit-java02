@@ -1,11 +1,11 @@
 package basic;
 
-//yield()¸Þ¼­µå ¿¬½À¿ë ¿¹Á¦
+//yield()ë©”ì„œë“œ ì—°ìŠµìš© ì˜ˆì œ
 
 public class ThreadTest10 {
 	public static void main(String[] args) {
-		YieldThread th1 = new YieldThread("1¹ø ¾²·¹µå");
-		YieldThread th2 = new YieldThread("2¹ø ¾²·¹µå");
+		YieldThread th1 = new YieldThread("1ë²ˆ ì“°ë ˆë“œ");
+		YieldThread th2 = new YieldThread("2ë²ˆ ì“°ë ˆë“œ");
 		
 		th1.start();
 		th2.start();
@@ -40,7 +40,7 @@ public class ThreadTest10 {
 }
 
 
-//yield() ¸Þ¼­µå ¿¬½À¿ë ¾²·¹µå
+//yield() ë©”ì„œë“œ ì—°ìŠµìš© ì“°ë ˆë“œ
 class YieldThread extends Thread{
 	private boolean stop = false;
 	private boolean work = true;
@@ -54,16 +54,16 @@ class YieldThread extends Thread{
 	}
 	
 	public YieldThread(String name) {
-		super(name);		//¾²·¹µåÀÇ ÀÌ¸§ ¼³Á¤ÇÏ±â
+		super(name);		//ì“°ë ˆë“œì˜ ì´ë¦„ ì„¤ì •í•˜ê¸°
 	}
 	
 	@Override
 	public void run() {
 		while(!stop) {
 			if(work) {
-				System.out.println(getName() + " ÀÛ¾÷ Áß...");
-			}else {			//¾î¶² Á¶°ÇÀ» ¸¸Á·ÇÒ ¶§¸¸ ½ÇÇàÇÏ°í ´Ù¸¥ ¶§´Â ½ÇÇàÀ» ¾ÈÇÏ°Ô ÇÏ°í½Í´Ù ==>yield
-				System.out.println(getName() + " ¾çº¸...");
+				System.out.println(getName() + " ìž‘ì—… ì¤‘...");
+			}else {			//ì–´ë–¤ ì¡°ê±´ì„ ë§Œì¡±í•  ë•Œë§Œ ì‹¤í–‰í•˜ê³  ë‹¤ë¥¸ ë•ŒëŠ” ì‹¤í–‰ì„ ì•ˆí•˜ê²Œ í•˜ê³ ì‹¶ë‹¤ ==>yield
+				System.out.println(getName() + " ì–‘ë³´...");
 				Thread.yield();
 			}
 			

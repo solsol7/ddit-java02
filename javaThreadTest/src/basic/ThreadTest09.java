@@ -1,6 +1,6 @@
 package basic;
 
-//¾²·¹µåÀÇ »óÅÂ¸¦ Ãâ·ÂÇÏ´Â ¿¹Á¦
+//ì“°ë ˆë“œì˜ ìƒíƒœë¥¼ ì¶œë ¥í•˜ëŠ” ì˜ˆì œ
 
 public class ThreadTest09 {
 	
@@ -11,13 +11,13 @@ public class ThreadTest09 {
 	}
 }
 
-// ¾²·¹µå »óÅÂÀÇ °Ë»ç ´ë»óÀÌ µÇ´Â ¾²·¹µå
+// ì“°ë ˆë“œ ìƒíƒœì˜ ê²€ì‚¬ ëŒ€ìƒì´ ë˜ëŠ” ì“°ë ˆë“œ
 class TargetThread extends Thread{
 	@Override
 	public void run() {
 		long temp = 0;
 		
-		//Ã³¸®ÁßÀÎ »óÅÂ ¸¸µé±âÀ§ÇØ ¾Æ¹« ¹İº¹¹® ¾¸ // ½Ã°£ Áö¿¬¿ë...
+		//ì²˜ë¦¬ì¤‘ì¸ ìƒíƒœ ë§Œë“¤ê¸°ìœ„í•´ ì•„ë¬´ ë°˜ë³µë¬¸ ì”€ // ì‹œê°„ ì§€ì—°ìš©...
 		for(long i=1L; i<=20_000_000_000L; i++) {
 			temp = i % 8L;
 		}
@@ -34,33 +34,33 @@ class TargetThread extends Thread{
 	}
 }
 
-//°Ë»ç ´ë»óÀÇ ¾²·¹µåÀÇ »óÅÂ¸¦ Ãâ·ÂÇÏ´Â ¾²·¹µå
+//ê²€ì‚¬ ëŒ€ìƒì˜ ì“°ë ˆë“œì˜ ìƒíƒœë¥¼ ì¶œë ¥í•˜ëŠ” ì“°ë ˆë“œ
 class StatePrintThread extends Thread{
 	private TargetThread target;
 
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public StatePrintThread(TargetThread target) {
 		super();
 		this.target = target;
 	}
 	
-	//Å¸°Ù¾²·¹µåÀÇ »óÅÂ¸¦ Ãâ·Â
+	//íƒ€ê²Ÿì“°ë ˆë“œì˜ ìƒíƒœë¥¼ ì¶œë ¥
 	@Override
 	public void run() {
 		while(true) {
-			//¾²·¹µåÀÇ ÇöÀç »óÅÂ°ª ±¸ÇÏ±â - ¿­°ÅÇüÀ¸·Î Ç¥½ÃµÇµµ·Ï ¼³Á¤µÇ¾îÀÖÀ½
-			// getState() ==> ¾²·¹µåÀÇ ÇöÀç »óÅÂ°ªÀ» Thread.StateÇüÀÇ ¿­°ÅÇüÀ¸·Î ¹İÈ¯ÇÑ´Ù.
+			//ì“°ë ˆë“œì˜ í˜„ì¬ ìƒíƒœê°’ êµ¬í•˜ê¸° - ì—´ê±°í˜•ìœ¼ë¡œ í‘œì‹œë˜ë„ë¡ ì„¤ì •ë˜ì–´ìˆìŒ
+			// getState() ==> ì“°ë ˆë“œì˜ í˜„ì¬ ìƒíƒœê°’ì„ Thread.Stateí˜•ì˜ ì—´ê±°í˜•ìœ¼ë¡œ ë°˜í™˜í•œë‹¤.
 			Thread.State state = target.getState(); 
-			System.out.println("TargetThreadÀÇ ÇöÀç »óÅÂ°ª : "+state);
+			System.out.println("TargetThreadì˜ í˜„ì¬ ìƒíƒœê°’ : "+state);
 			
-			//TargetThreadÀÇ »óÅÂ°¡ NEW»óÅÂÀÌ¸é...  => TargetThread´Â ½ÇÇàÁßÀÌ ¾Æ´Ï´Ù
+			//TargetThreadì˜ ìƒíƒœê°€ NEWìƒíƒœì´ë©´...  => TargetThreadëŠ” ì‹¤í–‰ì¤‘ì´ ì•„ë‹ˆë‹¤
 			if(state == Thread.State.NEW) {
 				target.start();
 			}
 			
-			//TargetThreadÀÇ »óÅÂ°¡ TERMINATED»óÅÂÀÌ¸é... =>TargetThread°¡ ³¡³­ »óÅÂ´Ù
+			//TargetThreadì˜ ìƒíƒœê°€ TERMINATEDìƒíƒœì´ë©´... =>TargetThreadê°€ ëë‚œ ìƒíƒœë‹¤
 			if(state == Thread.State.TERMINATED) {
-				break;	//¹İº¹¹® ºüÁ®³ª°¡±â
+				break;	//ë°˜ë³µë¬¸ ë¹ ì ¸ë‚˜ê°€ê¸°
 			}
 			
 			try {

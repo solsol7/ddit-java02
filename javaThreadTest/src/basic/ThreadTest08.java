@@ -1,14 +1,14 @@
 package basic;
 
-//µ¥¸ó ¾²·¹µå ¿¬½À ==> ÀÚµ¿ ÀúÀåÇÏ´Â ¾²·¹µå
+//ë°ëª¬ ì“°ë ˆë“œ ì—°ìŠµ ==> ìë™ ì €ì¥í•˜ëŠ” ì“°ë ˆë“œ
 public class ThreadTest08 {
 
 	public static void main(String[] args) {
 		AutoSaveThread autoSave = new AutoSaveThread();
 		
-		autoSave.setDaemon(true); //µ¥¸ó¾²·¹µå°¡ µÊ
+		autoSave.setDaemon(true); //ë°ëª¬ì“°ë ˆë“œê°€ ë¨
 		
-		System.out.println("µ¥¸ó ¿©ºÎ : "+autoSave.isDaemon());
+		System.out.println("ë°ëª¬ ì—¬ë¶€ : "+autoSave.isDaemon());
 		
 		autoSave.start();
 		
@@ -21,17 +21,17 @@ public class ThreadTest08 {
 			
 		}
 		
-		System.out.println("main ¾²·¹µå Á¾·á...");
+		System.out.println("main ì“°ë ˆë“œ ì¢…ë£Œ...");
 
 	}
 
 }
 
-// ÀÚµ¿ ÀúÀåÇÏ´Â ¾²·¹µå (3ÃÊ¿¡ ÇÑ¹ø¾¿ ÀúÀåÇÏ±â)
+// ìë™ ì €ì¥í•˜ëŠ” ì“°ë ˆë“œ (3ì´ˆì— í•œë²ˆì”© ì €ì¥í•˜ê¸°)
 class AutoSaveThread extends Thread{
-	//ÀÛ¾÷ ³»¿ëÀ» ÀúÀåÇÏ´Â ¸Ş¼­µå
+	//ì‘ì—… ë‚´ìš©ì„ ì €ì¥í•˜ëŠ” ë©”ì„œë“œ
 	public void save() {
-		System.out.println("ÀÛ¾÷ ³»¿ëÀ» ÀúÀåÇÕ´Ï´Ù...");
+		System.out.println("ì‘ì—… ë‚´ìš©ì„ ì €ì¥í•©ë‹ˆë‹¤...");
 	}
 	
 	@Override

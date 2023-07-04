@@ -1,15 +1,15 @@
 package basic;
 /*
-	3°³ÀÇ ¾²·¹µå°¡ °¢°¢ ¾ËÆÄºªÀ» A~Z±îÁö Ãâ·ÂÇÏ´Âµ¥
-	Ãâ·ÂÀ» ³¡³½ ¼ø¼­´ë·Î °á°ú¸¦ ³ªÅ¸³»´Â ÇÁ·Î±×·¥ ÀÛ¼ºÇÏ±â
+	3ê°œì˜ ì“°ë ˆë“œê°€ ê°ê° ì•ŒíŒŒë²³ì„ A~Zê¹Œì§€ ì¶œë ¥í•˜ëŠ”ë°
+	ì¶œë ¥ì„ ëë‚¸ ìˆœì„œëŒ€ë¡œ ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” í”„ë¡œê·¸ë¨ ì‘ì„±í•˜ê¸°
  */
 public class ThreadTest12 {
 
 	public static void main(String[] args) {
 		DisplayCharacter[] disArr = new DisplayCharacter[] {
-				new DisplayCharacter("È«±æµ¿"),
-				new DisplayCharacter("ÀÌ¼ø½Å"),
-				new DisplayCharacter("°­°¨Âù"),				
+				new DisplayCharacter("í™ê¸¸ë™"),
+				new DisplayCharacter("ì´ìˆœì‹ "),
+				new DisplayCharacter("ê°•ê°ì°¬"),				
 		};
 		
 		for(DisplayCharacter dc : disArr) {
@@ -25,13 +25,13 @@ public class ThreadTest12 {
 		}
 		
 		System.out.println();
-		System.out.println("...°æ±â °á°ú ...");
-		System.out.println("¼ø À§ : "+DisplayCharacter.setRank);
+		System.out.println("...ê²½ê¸° ê²°ê³¼ ...");
+		System.out.println("ìˆœ ìœ„ : "+DisplayCharacter.setRank);
 	}
 
 }
 
-// A ~ Z±îÁö Ãâ·ÂÇÏ´Â ¾²·¹µå
+// A ~ Zê¹Œì§€ ì¶œë ¥í•˜ëŠ” ì“°ë ˆë“œ
 class DisplayCharacter extends Thread{
 	public static String setRank = "";
 	private String name ;
@@ -43,16 +43,16 @@ class DisplayCharacter extends Thread{
 	@Override
 	public void run() {
 		for(char c='A'; c<='Z'; c++) {
-			System.out.println(name+"ÀÇ Ãâ·Â ¹®ÀÚ : "+c);
-			try {	//¼Óµµ¸¦ Á¦°¢°¢À¸·Î ¸¸µé±âÀ§ÇØ ³­¼ö ÀÌ¿ë(ÀÏ½Ã Á¤Áö ½Ã°£ º¯°æ)
+			System.out.println(name+"ì˜ ì¶œë ¥ ë¬¸ì : "+c);
+			try {	//ì†ë„ë¥¼ ì œê°ê°ìœ¼ë¡œ ë§Œë“¤ê¸°ìœ„í•´ ë‚œìˆ˜ ì´ìš©(ì¼ì‹œ ì •ì§€ ì‹œê°„ ë³€ê²½)
 				Thread.sleep((int)(Math.random()*500));
 			} catch (InterruptedException e) {
 				
 			}
 		}
-		System.out.println(name + "Ãâ·Â ³¡...");
+		System.out.println(name + "ì¶œë ¥ ë...");
 		
-		//Ãâ·ÂÀ» ³¡³½ ¼ø¼­´ë·Î ÀÌ¸§À» ¹èÄ¡ÇÑ´Ù.
+		//ì¶œë ¥ì„ ëë‚¸ ìˆœì„œëŒ€ë¡œ ì´ë¦„ì„ ë°°ì¹˜í•œë‹¤.
 		setRank += name+" ";
 	}
 	

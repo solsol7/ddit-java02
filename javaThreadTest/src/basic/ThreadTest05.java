@@ -5,14 +5,14 @@ import javax.swing.JOptionPane;
 public class ThreadTest05 {
 
 	public static void main(String[] args) {
-		// »ç¿ëÀÚ·Î ºÎÅÍ µ¥ÀÌÅÍ ÀÔ·Â ¹Ş±â
-		String str= JOptionPane.showInputDialog("¾Æ¹«°Å³ª ÀÔ·ÂÇÏ¼¼¿ä...");
-		System.out.println("ÀÔ·Â °ª >>" + str);
+		// ì‚¬ìš©ìë¡œ ë¶€í„° ë°ì´í„° ì…ë ¥ ë°›ê¸°
+		String str= JOptionPane.showInputDialog("ì•„ë¬´ê±°ë‚˜ ì…ë ¥í•˜ì„¸ìš”...");
+		System.out.println("ì…ë ¥ ê°’ >>" + str);
 		
 		for(int i=10; i>0; i--) {
 			try {
 				System.out.println(i);
-				Thread.sleep(1000);				//1ÃÊ µ¿¾È ¸ØÃá´Ù.
+				Thread.sleep(1000);				//1ì´ˆ ë™ì•ˆ ë©ˆì¶˜ë‹¤.
 			} catch (InterruptedException e) {
 				
 			}

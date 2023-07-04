@@ -14,14 +14,14 @@ public class ThreadTest19 {
 
 }
 
-//°øÅëÀ¸·Î »ç¿ëÇÒ Å¬·¡½º
+//ê³µí†µìœ¼ë¡œ ì‚¬ìš©í•  í´ë˜ìŠ¤
 class DataBox{
 	private String data;
 	
-	//µ¥ÀÌÅÍ¸¦ °¡Á®°¡´Â ¸Ş¼­µå
-	// ==> dataº¯¼öÀÇ °ªÀÌ nullÀÌ¸é dataº¯¼ö¿¡ ¹®ÀÚ¿­ÀÌ Ã¤¿öÁú ¶§±îÁö ±â´Ù¸®°í
-	//		dataº¯¼ö¿¡ °ªÀÌ ÀÖÀ¸¸é ÇØ´ç ¹®ÀÚ¿­À» ¹İÈ¯ÇÑ´Ù.
-	//		(¹®ÀÚ¿­À» ¹İÈ¯ÇÑ ÈÄ¿¡´Â dataº¯¼öÀÇ °ªÀ» null·Î ¸¸µç´Ù.
+	//ë°ì´í„°ë¥¼ ê°€ì ¸ê°€ëŠ” ë©”ì„œë“œ
+	// ==> dataë³€ìˆ˜ì˜ ê°’ì´ nullì´ë©´ dataë³€ìˆ˜ì— ë¬¸ìì—´ì´ ì±„ì›Œì§ˆ ë•Œê¹Œì§€ ê¸°ë‹¤ë¦¬ê³ 
+	//		dataë³€ìˆ˜ì— ê°’ì´ ìˆìœ¼ë©´ í•´ë‹¹ ë¬¸ìì—´ì„ ë°˜í™˜í•œë‹¤.
+	//		(ë¬¸ìì—´ì„ ë°˜í™˜í•œ í›„ì—ëŠ” dataë³€ìˆ˜ì˜ ê°’ì„ nullë¡œ ë§Œë“ ë‹¤.
 	public synchronized String getData() {
 		if(data==null) {
 			try {
@@ -32,7 +32,7 @@ class DataBox{
 		}
 		
 		String temp = data;
-		System.out.println("¾²·¹µå°¡ ÀĞÀº µ¥ÀÌÅÍ : "+temp);
+		System.out.println("ì“°ë ˆë“œê°€ ì½ì€ ë°ì´í„° : "+temp);
 		data = null;
 		
 		notify();
@@ -40,9 +40,9 @@ class DataBox{
 		return temp;
 	}
 	
-	//µ¥ÀÌÅÍ¸¦ °ø±ŞÇÏ´Â ¸Ş¼­µå
-	// ==> dataº¯¼ö¿¡ °ªÀÌ ÀÖÀ¸¸é dataº¯¼öÀÇ °ªÀÌ nullÀÌ µÉ ¶§±îÁö ±â´Ù¸°´Ù.
-	//		dataº¯¼öÀÇ °ªÀÌ nullÀÌ µÇ¸é »õ·Î¿î ¹®ÀÚ¿­À» dataº¯¼ö¿¡ ÀúÀåÇÑ´Ù.
+	//ë°ì´í„°ë¥¼ ê³µê¸‰í•˜ëŠ” ë©”ì„œë“œ
+	// ==> dataë³€ìˆ˜ì— ê°’ì´ ìˆìœ¼ë©´ dataë³€ìˆ˜ì˜ ê°’ì´ nullì´ ë  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
+	//		dataë³€ìˆ˜ì˜ ê°’ì´ nullì´ ë˜ë©´ ìƒˆë¡œìš´ ë¬¸ìì—´ì„ dataë³€ìˆ˜ì— ì €ì¥í•œë‹¤.
 	public synchronized void setData(String data) {
 		if(this.data!=null) {
 			try {
@@ -53,16 +53,16 @@ class DataBox{
 		}
 		
 		this.data = data;
-		System.out.println("Thread¿¡¼­ »õ·Î ÀúÀåÇÑ µ¥ÀÌÅÍ : "+this.data);
+		System.out.println("Threadì—ì„œ ìƒˆë¡œ ì €ì¥í•œ ë°ì´í„° : "+this.data);
 		notify();
 	}
 }
 
-//µ¥ÀÌÅÍ¸¦ °ø±ŞÇÏ´Â ¸Ş¼­µå
+//ë°ì´í„°ë¥¼ ê³µê¸‰í•˜ëŠ” ë©”ì„œë“œ
 class ProducerThread extends Thread{
 	private DataBox databox;
 
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public ProducerThread(DataBox databox) {
 		super();
 		this.databox = databox;
@@ -70,18 +70,18 @@ class ProducerThread extends Thread{
 	
 	@Override
 	public void run() {
-		String[] dataArr = {"¼­¿ï", "´ëÀü", "ºÎ»ê", "Á¦ÁÖ"};
+		String[] dataArr = {"ì„œìš¸", "ëŒ€ì „", "ë¶€ì‚°", "ì œì£¼"};
 		for(int i=0; i<dataArr.length; i++) {
 			databox.setData(dataArr[i]);
 		}
 	}
 }
 
-//µ¥ÀÌÅÍ¸¦ ²¨³»¼­ »ç¿ëÇÏ´Â ¾²·¹µå
+//ë°ì´í„°ë¥¼ êº¼ë‚´ì„œ ì‚¬ìš©í•˜ëŠ” ì“°ë ˆë“œ
 class ConsumerThread extends Thread{
 	private DataBox databox;
 
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public ConsumerThread(DataBox databox) {
 		super();
 		this.databox = databox;
@@ -92,7 +92,7 @@ class ConsumerThread extends Thread{
 		for(int i=1; i<=4; i++) {
 			String returnData = databox.getData();
 			
-			//°¡Á®¿Â µ¥ÀÌÅÍ¸¦ »ç¿ëÇÏ´Â ÄÚµåµé...
+			//ê°€ì ¸ì˜¨ ë°ì´í„°ë¥¼ ì‚¬ìš©í•˜ëŠ” ì½”ë“œë“¤...
 		}
 	}
 }

@@ -1,9 +1,9 @@
 package basic;
 
-//ÀºÇàÀÇ ÀÔÃâ±ÝÀ» ¾²·¹µå·Î Ã³¸®ÇÏ´Â ¿¹Á¦
+//ì€í–‰ì˜ ìž…ì¶œê¸ˆì„ ì“°ë ˆë“œë¡œ ì²˜ë¦¬í•˜ëŠ” ì˜ˆì œ
 
 public class ThreadTest16 {
-	private int balance;		//ÀÜ¾×ÀÌ ÀúÀåµÉ º¯¼ö
+	private int balance;		//ìž”ì•¡ì´ ì €ìž¥ë  ë³€ìˆ˜
 	
 	public int getBalance() {
 		return balance;
@@ -13,20 +13,20 @@ public class ThreadTest16 {
 		this.balance = balance;
 	}
 	
-	//ÀÔ±ÝÇÏ´Â ¸Þ¼­µå
+	//ìž…ê¸ˆí•˜ëŠ” ë©”ì„œë“œ
 	public void deposit(int money) {
 		balance += money;
 	}
 	
-	//Ãâ±ÝÇÏ´Â ¸Þ¼­µå (Ãâ±Ý ¼º°ø : true, Ãâ±Ý ½ÇÆÐ : false ¹ÝÈ¯)
+	//ì¶œê¸ˆí•˜ëŠ” ë©”ì„œë“œ (ì¶œê¸ˆ ì„±ê³µ : true, ì¶œê¸ˆ ì‹¤íŒ¨ : false ë°˜í™˜)
 	public synchronized boolean withdraw(int money) {
 		if(balance >= money) {
-			for(int i=1; i<=100_000_000; i++) {	//½Ã°£ Áö¿¬À» À§ÇØ ¾µµ¥¾ø´Â ÄÚµå ³ÖÀº°Í
+			for(int i=1; i<=100_000_000; i++) {	//ì‹œê°„ ì§€ì—°ì„ ìœ„í•´ ì“¸ë°ì—†ëŠ” ì½”ë“œ ë„£ì€ê²ƒ
 				int a = i;
 			}
 			
 			 balance -= money;
-			 System.out.println("¸Þ¼­µå ¾È¿¡¼­ balance = "+balance);
+			 System.out.println("ë©”ì„œë“œ ì•ˆì—ì„œ balance = "+balance);
 			 return true;
 		}else {
 			return false;
@@ -34,17 +34,17 @@ public class ThreadTest16 {
 	}
 	
 	public static void main(String[] args) {
-		ThreadTest16 account = new ThreadTest16();	//°øÅë°´Ã¼
-		account.setBalance(10000);		//ÀÜ¾×À» 10000¿øÀ¸·Î ¼³Á¤
+		ThreadTest16 account = new ThreadTest16();	//ê³µí†µê°ì²´
+		account.setBalance(10000);		//ìž”ì•¡ì„ 10000ì›ìœ¼ë¡œ ì„¤ì •
 		
 		//-------------------------------------
-		// ÀÍ¸í ±¸ÇöÃ¼·Î ¾²·¹µå ÀÛ¼º
+		// ìµëª… êµ¬í˜„ì²´ë¡œ ì“°ë ˆë“œ ìž‘ì„±
 		Runnable r = new Runnable() {
 			
 			@Override
 			public void run() {
-				boolean result = account.withdraw(6000);	//6000¿ø Ãâ±ÝÇÏ±â
-				System.out.println("¾²·¹µå¿¡¼­ result(Ãâ±Ý¿©ºÎ) ="+result+", balance(ÀÜ¾×) = " + account.getBalance());
+				boolean result = account.withdraw(6000);	//6000ì› ì¶œê¸ˆí•˜ê¸°
+				System.out.println("ì“°ë ˆë“œì—ì„œ result(ì¶œê¸ˆì—¬ë¶€) ="+result+", balance(ìž”ì•¡) = " + account.getBalance());
 			}
 		};
 		//-------------------------------------

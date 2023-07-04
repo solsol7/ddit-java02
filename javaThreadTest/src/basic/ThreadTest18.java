@@ -1,6 +1,6 @@
 package basic;
 /*
-  wait(), notify()¸Ş¼­µå¸¦ ÀÌ¿ëÇÑ µÎ ¾²·¹µå°¡ ¹ø°¥¾Æ ÇÑ¹ø¾¿ ½ÇÇàÇÏ´Â ¿¹Á¦
+  wait(), notify()ë©”ì„œë“œë¥¼ ì´ìš©í•œ ë‘ ì“°ë ˆë“œê°€ ë²ˆê°ˆì•„ í•œë²ˆì”© ì‹¤í–‰í•˜ëŠ” ì˜ˆì œ
  */
 public class ThreadTest18 {
 
@@ -17,22 +17,22 @@ public class ThreadTest18 {
 
 }
 
-//°øÅëÀ¸·Î »ç¿ëÇÒ °´Ã¼
+//ê³µí†µìœ¼ë¡œ ì‚¬ìš©í•  ê°ì²´
 class WorkObject{
 	public synchronized void testMethodA() {
-		System.out.println("testMethodA() ¸Ş¼­µå ½ÇÇàÁß...");
-		notify();	//wait°¡ ¸ÕÀú ÀÖÀ¸¸é µÑ´Ù waitingÇ®¿¡ µé¾î°¨
+		System.out.println("testMethodA() ë©”ì„œë“œ ì‹¤í–‰ì¤‘...");
+		notify();	//waitê°€ ë¨¼ì € ìˆìœ¼ë©´ ë‘˜ë‹¤ waitingí’€ì— ë“¤ì–´ê°
 		
 		try {
 			wait();
 		} catch (InterruptedException e) {
 			// TODO: handle exception
 		}
-		System.out.println("testMethodA() ¸Ş¼­µå ³¡...");
+		System.out.println("testMethodA() ë©”ì„œë“œ ë...");
 	}
 	
 	public synchronized void testMethodB() {
-		System.out.println("testMethodB() ¸Ş¼­µå ÀÛ¼ºÁß...");
+		System.out.println("testMethodB() ë©”ì„œë“œ ì‘ì„±ì¤‘...");
 		notify();
 		
 		try {
@@ -40,12 +40,12 @@ class WorkObject{
 		} catch (InterruptedException e) {
 			// TODO: handle exception
 		}
-		System.out.println("testMethodB() ¸Ş¼­µå ³¡...");
+		System.out.println("testMethodB() ë©”ì„œë“œ ë...");
 	}
 }
 
 
-//WorkObjectÀÇ testMethodA()¸Ş¼­µå¸¸ È£ÃâÇÏ´Â ¾²·¹µå
+//WorkObjectì˜ testMethodA()ë©”ì„œë“œë§Œ í˜¸ì¶œí•˜ëŠ” ì“°ë ˆë“œ
 class ThreadA extends Thread{
 	private WorkObject workObj;
 	
@@ -65,7 +65,7 @@ class ThreadA extends Thread{
 	}
 }
 
-//WorkObjectÀÇ testMethodB()¸Ş¼­µå¸¸ È£ÃâÇÏ´Â ¾²·¹µå
+//WorkObjectì˜ testMethodB()ë©”ì„œë“œë§Œ í˜¸ì¶œí•˜ëŠ” ì“°ë ˆë“œ
 class ThreadB extends Thread{
 	private WorkObject workObj;
 	

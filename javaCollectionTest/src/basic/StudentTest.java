@@ -6,17 +6,17 @@ import java.util.Comparator;
 import java.util.List;
 
 /*
-  ¹®Á¦) ÇĞ¹ø, ÀÌ¸§, ±¹¾îÁ¡¼ö, ¿µ¾îÁ¡¼ö, ¼öÇĞÁ¡¼ö, ÃÑÁ¡, µî¼ö¸¦ ¸â¹ö·Î °®´Â StudentÅ¬·¡½º¸¦ ¸¸µç´Ù.
-    ÀÌ Å¬·¡½ºÀÇ »ı¼ºÀÚ¿¡¼­´Â ÇĞ¹ø, ÀÌ¸§, ±¹¾îÁ¡¼ö, ¿µ¾îÁ¡¼ö, ¼öÇĞÁ¡¼ö¸¸ ¸Å°³º¯¼ö·Î ¹Ş¾Æ¼­
-    ÃÊ±âÈ­ Ã³¸®¸¦ ÇÑ´Ù.
+  ë¬¸ì œ) í•™ë²ˆ, ì´ë¦„, êµ­ì–´ì ìˆ˜, ì˜ì–´ì ìˆ˜, ìˆ˜í•™ì ìˆ˜, ì´ì , ë“±ìˆ˜ë¥¼ ë©¤ë²„ë¡œ ê°–ëŠ” Studentí´ë˜ìŠ¤ë¥¼ ë§Œë“ ë‹¤.
+    ì´ í´ë˜ìŠ¤ì˜ ìƒì„±ìì—ì„œëŠ” í•™ë²ˆ, ì´ë¦„, êµ­ì–´ì ìˆ˜, ì˜ì–´ì ìˆ˜, ìˆ˜í•™ì ìˆ˜ë§Œ ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì•„ì„œ
+    ì´ˆê¸°í™” ì²˜ë¦¬ë¥¼ í•œë‹¤.
     
-    ÀÌ Student°´Ã¼´Â List¿¡ ÀúÀåÇÏ¿© °ü¸®ÇÑ´Ù.
+    ì´ Studentê°ì²´ëŠ” Listì— ì €ì¥í•˜ì—¬ ê´€ë¦¬í•œë‹¤.
 
-  List¿¡ ÀúÀåµÈ µ¥ÀÌÅÍµéÀ» ÇĞ¹øÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÒ ¼ö ÀÖ´Â ³»ºÎ Á¤·Ä ±âÁØÀ» ±¸ÇöÇÏ°í,
-    ÃÑÁ¡ÀÇ ¿ª¼øÀ¸·Î Á¤·ÄÇÏ´Âµ¥ ÃÑÁ¡ÀÌ °°À¸¸é ÀÌ¸§ÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÀÌ µÇ´Â ¿ÜºÎ Á¤·Ä ±âÁØ 
-    Å¬·¡½º¸¦ ÀÛ¼ºÇÏ¿© Á¤·ÄµÈ °á°ú¸¦ Ãâ·ÂÇÏ½Ã¿À.
+  Listì— ì €ì¥ëœ ë°ì´í„°ë“¤ì„ í•™ë²ˆì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•  ìˆ˜ ìˆëŠ” ë‚´ë¶€ ì •ë ¬ ê¸°ì¤€ì„ êµ¬í˜„í•˜ê³ ,
+    ì´ì ì˜ ì—­ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ”ë° ì´ì ì´ ê°™ìœ¼ë©´ ì´ë¦„ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ì´ ë˜ëŠ” ì™¸ë¶€ ì •ë ¬ ê¸°ì¤€ 
+    í´ë˜ìŠ¤ë¥¼ ì‘ì„±í•˜ì—¬ ì •ë ¬ëœ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 
-    (´Ü, µî¼ö´Â List¿¡ ÀüÃ¼ µ¥ÀÌÅÍ°¡ Ãß°¡µÈ ÈÄ¿¡ ±¸ÇØ¼­ ÀúÀåµÇµµ·Ï ÇÑ´Ù.)
+    (ë‹¨, ë“±ìˆ˜ëŠ” Listì— ì „ì²´ ë°ì´í„°ê°€ ì¶”ê°€ëœ í›„ì— êµ¬í•´ì„œ ì €ì¥ë˜ë„ë¡ í•œë‹¤.)
 
  */
 
@@ -26,12 +26,12 @@ public class StudentTest {
 	public static void main(String[] args) {
 /*		List<Student> list=new ArrayList<>();
 		
-		list.add(new Student("15348","±è´Ù¶ó",80,60,90));
-		list.add(new Student("11526","±èÅ°ÁÖ",70,65,80));
-		list.add(new Student("19462","ÇÏÁø³ª",100,90,40));
-		list.add(new Student("11564","¾ç¾Æ³ª",80,75,80));
-		list.add(new Student("26745","ÀÌÀ×³ª",75,65,90));
-		list.add(new Student("12684","Àü°¡³ª",80,65,95));
+		list.add(new Student("15348","ê¹€ë‹¤ë¼",80,60,90));
+		list.add(new Student("11526","ê¹€í‚¤ì£¼",70,65,80));
+		list.add(new Student("19462","í•˜ì§„ë‚˜",100,90,40));
+		list.add(new Student("11564","ì–‘ì•„ë‚˜",80,75,80));
+		list.add(new Student("26745","ì´ì‰ë‚˜",75,65,90));
+		list.add(new Student("12684","ì „ê°€ë‚˜",80,65,95));
 
 		for(int i=0; i<list.size(); i++) {
 			list.get(i).setRank(1);
@@ -45,19 +45,19 @@ public class StudentTest {
 			}
 		}
 		
-		System.out.println("º¯°æ Àü ...");
+		System.out.println("ë³€ê²½ ì „ ...");
 		for(Student std : list) {
 			System.out.println(std);
 		}
 		
 		Collections.sort(list);
-		System.out.println("ÇĞ¹ø ¿À¸§Â÷¼ø ...");
+		System.out.println("í•™ë²ˆ ì˜¤ë¦„ì°¨ìˆœ ...");
 		for(Student std : list) {
 			System.out.println(std);
 		}
 		
 		Collections.sort(list, new Sum());
-		System.out.println("ÃÑÁ¡ ³»¸²Â÷¼ø...");
+		System.out.println("ì´ì  ë‚´ë¦¼ì°¨ìˆœ...");
 		for(Student std : list) {
 			System.out.println(std);
 		}
@@ -66,7 +66,7 @@ public class StudentTest {
 	}
 
 }
- ³» ´ä
+ ë‚´ ë‹µ
 class Sum implements Comparator<Student>{
 
 	@Override
@@ -175,60 +175,60 @@ class Student implements Comparable<Student>{
 
 */
 
-//¼±»ı´Ô´ä	
+//ì„ ìƒë‹˜ë‹µ	
 		
 		
 		
 		
 		List<Student> stdList=new ArrayList<>();
 
-		stdList.add(new Student(15348,"±è´Ù¶ó",80,60,90));
-		stdList.add(new Student(11526,"±èÅ°ÁÖ",70,65,80));
-		stdList.add(new Student(19462,"ÇÏÁø³ª",100,90,40));
-		stdList.add(new Student(11564,"¾ç¾Æ³ª",80,75,80));
-		stdList.add(new Student(26745,"ÀÌÀ×³ª",75,65,90));
-		stdList.add(new Student(12684,"Àü°¡³ª",80,65,95));
+		stdList.add(new Student(15348,"ê¹€ë‹¤ë¼",80,60,90));
+		stdList.add(new Student(11526,"ê¹€í‚¤ì£¼",70,65,80));
+		stdList.add(new Student(19462,"í•˜ì§„ë‚˜",100,90,40));
+		stdList.add(new Student(11564,"ì–‘ì•„ë‚˜",80,75,80));
+		stdList.add(new Student(26745,"ì´ì‰ë‚˜",75,65,90));
+		stdList.add(new Student(12684,"ì „ê°€ë‚˜",80,65,95));
 		
 		StudentTest stdTest=new StudentTest();
 		stdTest.createRank(stdList);
 		
-		System.out.println("Á¤·ÄÀü...");
+		System.out.println("ì •ë ¬ì „...");
 		for( Student std : stdList) {
 			System.out.println(std);
 		}
 		System.out.println("----------------------------------------------");
 		
-		//ÇĞ¹øÀÇ ¿À¸§Â÷¼ø Á¤·ÄÇÏ±â
+		//í•™ë²ˆì˜ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ê¸°
 		Collections.sort(stdList);
 		
-		System.out.println("ÇĞ¹øÀÇ ¿À¸§Â÷¼ø Á¤·Ä ÈÄ...");
+		System.out.println("í•™ë²ˆì˜ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ í›„...");
 		for( Student std : stdList) {
 			System.out.println(std);
 		}
 		System.out.println("----------------------------------------------");
 		
-		//ÃÑÁ¡ÀÇ ¿ª¼ø(³»¸²Â÷¼ø)À¸·Î Á¤·ÄÇÏ±â
+		//ì´ì ì˜ ì—­ìˆœ(ë‚´ë¦¼ì°¨ìˆœ)ìœ¼ë¡œ ì •ë ¬í•˜ê¸°
 		Collections.sort(stdList, new SortByTotal());
 
-		System.out.println("ÃÑÁ¡ÀÇ ³»¸²Â÷¼ø Á¤·Ä ÈÄ...");
+		System.out.println("ì´ì ì˜ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬ í›„...");
 		for( Student std : stdList) {
 			System.out.println(std);
 		}
 	}
 
 
-	//µî¼ö¸¦ ±¸ÇÏ´Â ¸Ş¼­µå
+	//ë“±ìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë©”ì„œë“œ
 	public void createRank(List<Student> list) {
-		for(Student std1 : list) {								//±âÁØ µ¥ÀÌÅÍ¸¦ ±¸ÇÏ±â À§ÇÑ ¹İº¹¹®
-			int rank = 1;										//Ã³À½¿¡´Â 1µîÀ¸·Î ¼³Á¤ÇØ ³õ°í ½ÃÀÛÇÑ´Ù.
+		for(Student std1 : list) {								//ê¸°ì¤€ ë°ì´í„°ë¥¼ êµ¬í•˜ê¸° ìœ„í•œ ë°˜ë³µë¬¸
+			int rank = 1;										//ì²˜ìŒì—ëŠ” 1ë“±ìœ¼ë¡œ ì„¤ì •í•´ ë†“ê³  ì‹œì‘í•œë‹¤.
 			
-			for(Student std2 : list) {							//ºñ±³ ´ë»óÀ» ³ªÅ¸³»´Â ¹İº¹¹®
-				if(std1.getTot() < std2.getTot()) {				//±âÁØ°ªº¸´Ù ´ë»ó°ªÀÌ Å©¸é
-					rank++;										//rank°ª Áõ°¡
+			for(Student std2 : list) {							//ë¹„êµ ëŒ€ìƒì„ ë‚˜íƒ€ë‚´ëŠ” ë°˜ë³µë¬¸
+				if(std1.getTot() < std2.getTot()) {				//ê¸°ì¤€ê°’ë³´ë‹¤ ëŒ€ìƒê°’ì´ í¬ë©´
+					rank++;										//rankê°’ ì¦ê°€
 				}
 			}
 			
-			std1.setRank(rank);//±¸ÇØÁø µî¼ö¸¦ Student°´Ã¼ÀÇ rankº¯¼ö¿¡ ÀúÀåÇÑ´Ù
+			std1.setRank(rank);//êµ¬í•´ì§„ ë“±ìˆ˜ë¥¼ Studentê°ì²´ì˜ rankë³€ìˆ˜ì— ì €ì¥í•œë‹¤
 		}
 	}
 }
@@ -325,7 +325,7 @@ class Student implements Comparable<Student>{
 	
 }
 
-//ÃÑÁ¡ÀÇ ¿ª¼øÀ¸·Î Á¤·ÄÇÏ´Âµ¥ ÃÑÁ¡ÀÌ °°À¸¸é ÀÌ¸§ÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÀÌ µÇ´Â ¿ÜºÎÁ¤·Ä ±âÁØ
+//ì´ì ì˜ ì—­ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ”ë° ì´ì ì´ ê°™ìœ¼ë©´ ì´ë¦„ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ì´ ë˜ëŠ” ì™¸ë¶€ì •ë ¬ ê¸°ì¤€
 class SortByTotal implements Comparator<Student>{
 
 	@Override

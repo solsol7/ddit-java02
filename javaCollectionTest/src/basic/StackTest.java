@@ -6,36 +6,36 @@ public class StackTest {
 	public static void main(String[] args) {
 		Browser b = new Browser();
 		
-		b.goURL("1. ³×ÀÌ¹ö");
+		b.goURL("1. ë„¤ì´ë²„");
 		b.history();
 		
-		b.goURL("2. ³×ÀÌÆ®");
+		b.goURL("2. ë„¤ì´íŠ¸");
 		b.history();
 		
-		b.goURL("3. ±¸±Û");
-		b.goURL("4. ´ÙÀ½");
+		b.goURL("3. êµ¬ê¸€");
+		b.goURL("4. ë‹¤ìŒ");
 
 		b.history();
 		
-		System.out.println("µÚ·Î°¡±â ÈÄ...");
+		System.out.println("ë’¤ë¡œê°€ê¸° í›„...");
 		b.goBack();
 		b.history();
 		
-		System.out.println("¾ÕÀ¸·Î °¡±â ÈÄ...");
+		System.out.println("ì•ìœ¼ë¡œ ê°€ê¸° í›„...");
 		b.goForward();
 		b.history();
 		
-		System.out.println("»õ·Î¿î »çÀÌÆ® Á¢¼ÓÇÏ±â...");
-		b.goURL("5. ¾ßÈÄ");
+		System.out.println("ìƒˆë¡œìš´ ì‚¬ì´íŠ¸ ì ‘ì†í•˜ê¸°...");
+		b.goURL("5. ì•¼í›„");
 		b.history();
 	}
 }
 
-//À¥ºê¶ó¿ìÀúÀÇ ¾ÕÀ¸·Î °¡±â, µÚ·Î °¡±â ±â´É ±¸Çö ¿¹Á¦(½ºÅÃ ÀÌ¿ë)
+//ì›¹ë¸Œë¼ìš°ì €ì˜ ì•ìœ¼ë¡œ ê°€ê¸°, ë’¤ë¡œ ê°€ê¸° ê¸°ëŠ¥ êµ¬í˜„ ì˜ˆì œ(ìŠ¤íƒ ì´ìš©)
 class Browser{
-	private Stack<String> back;		//ÀÌÀü ¹æ¹® ³»¿ªÀÌ ÀúÀåµÉ ½ºÅÃ(ÁÖ¼Ò ÀúÀå)
-	private Stack<String> forward; 	//´ÙÀ½ ¹æ¹® ³»¿ªÀÌ ÀúÀåµÉ ½ºÅÃ
-	private String currentURL;		//ÇöÀç ÆäÀÌÁö
+	private Stack<String> back;		//ì´ì „ ë°©ë¬¸ ë‚´ì—­ì´ ì €ì¥ë  ìŠ¤íƒ(ì£¼ì†Œ ì €ì¥)
+	private Stack<String> forward; 	//ë‹¤ìŒ ë°©ë¬¸ ë‚´ì—­ì´ ì €ì¥ë  ìŠ¤íƒ
+	private String currentURL;		//í˜„ì¬ í˜ì´ì§€
 	
 	public Browser() {
 		back = new Stack<String>();
@@ -43,30 +43,30 @@ class Browser{
 		currentURL = "";
 	}
 	
-	//»çÀÌÆ®¸¦ ¹æ¹®ÇÏ´Â ¸Ş¼­µå(ÁÖ¼ÒÃ¢¿¡ ¹º°¡¸¦ ÀÔ·ÂÇßÀ» ¶§ Ã³¸®ÇÏ´Â ¸Ş¼Òµå)
-	public void goURL(String url) {	//¸Å°³º¯¼ö¿¡ ÀÔ·ÂÇÑ ÁÖ¼Ò(¹æ¹®ÇÒ URL) Àü´Ş
-		System.out.println(url + " »çÀÌÆ®¿¡ Á¢¼ÓÇÕ´Ï´Ù...");
+	//ì‚¬ì´íŠ¸ë¥¼ ë°©ë¬¸í•˜ëŠ” ë©”ì„œë“œ(ì£¼ì†Œì°½ì— ë­”ê°€ë¥¼ ì…ë ¥í–ˆì„ ë•Œ ì²˜ë¦¬í•˜ëŠ” ë©”ì†Œë“œ)
+	public void goURL(String url) {	//ë§¤ê°œë³€ìˆ˜ì— ì…ë ¥í•œ ì£¼ì†Œ(ë°©ë¬¸í•  URL) ì „ë‹¬
+		System.out.println(url + " ì‚¬ì´íŠ¸ì— ì ‘ì†í•©ë‹ˆë‹¤...");
 		System.out.println();
 		
-		if(currentURL != null && !"".equals(currentURL)) {	//ÇöÀç ÆäÀÌÁö°¡ ÀÖÀ¸¸é..
-															//Ã³À½¿¡´Â false³ª¿È - currentURLÀÌ nullÀÌ±â ¶§¹®
-			back.push(currentURL);				//ÇöÀç ÆäÀÌÁö¸¦ back½ºÅÃ¿¡ ÀúÀåÇÑ´Ù.
+		if(currentURL != null && !"".equals(currentURL)) {	//í˜„ì¬ í˜ì´ì§€ê°€ ìˆìœ¼ë©´..
+															//ì²˜ìŒì—ëŠ” falseë‚˜ì˜´ - currentURLì´ nullì´ê¸° ë•Œë¬¸
+			back.push(currentURL);				//í˜„ì¬ í˜ì´ì§€ë¥¼ backìŠ¤íƒì— ì €ì¥í•œë‹¤.
 		}
-		currentURL = url; 		//ÇöÀç ÆäÀÌÁö¸¦ ÀÌµ¿ÇÒ ÆäÀÌÁö·Î ¹Ù²ãÁÜ
-		forward.clear();		//forward½ºÅÃ µ¥ÀÌÅÍ ¸ğµÎ »èÁ¦ÇÏ±â
+		currentURL = url; 		//í˜„ì¬ í˜ì´ì§€ë¥¼ ì´ë™í•  í˜ì´ì§€ë¡œ ë°”ê¿”ì¤Œ
+		forward.clear();		//forwardìŠ¤íƒ ë°ì´í„° ëª¨ë‘ ì‚­ì œí•˜ê¸°
 	}							
 	
-	//µÚ·Î °¡±â ¸Ş¼­µå
-	public void goBack() {	//ÇöÀç ÁÖ¼Ò´Â ¾ÕÀ¸·Î°¡±â ÂÊÀ¸·Î ³Ñ±â°í µÚ·Î°¡±â ÁÖ¼Ò¸¦ ÇöÀçÆäÀÌÁö¿¡ ³Ö¾î¾ßÇÔ
-		if(!back.isEmpty()) {	//isEmpty() ¸Ş¼­µå ==> Collection¿¡ µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é true, ÀÖÀ¸¸é false¸¦ ¹İÈ¯
-								//µÚ·Î°¡±â°¡ ÀÖ´ÂÁö °Ë»ç
-			forward.push(currentURL); 		//ÇöÀç ÆäÀÌÁö¸¦ forward½ºÅÃ¿¡ Ãß°¡
-			currentURL = back.pop();		//back½ºÅÃ¿¡¼­ 1°³ÀÇ ¿ä¼Ò¸¦ ²¨³»¿Í ÇöÀç ÆäÀÌÁö·Î ÀúÀå
+	//ë’¤ë¡œ ê°€ê¸° ë©”ì„œë“œ
+	public void goBack() {	//í˜„ì¬ ì£¼ì†ŒëŠ” ì•ìœ¼ë¡œê°€ê¸° ìª½ìœ¼ë¡œ ë„˜ê¸°ê³  ë’¤ë¡œê°€ê¸° ì£¼ì†Œë¥¼ í˜„ì¬í˜ì´ì§€ì— ë„£ì–´ì•¼í•¨
+		if(!back.isEmpty()) {	//isEmpty() ë©”ì„œë“œ ==> Collectionì— ë°ì´í„°ê°€ ì—†ìœ¼ë©´ true, ìˆìœ¼ë©´ falseë¥¼ ë°˜í™˜
+								//ë’¤ë¡œê°€ê¸°ê°€ ìˆëŠ”ì§€ ê²€ì‚¬
+			forward.push(currentURL); 		//í˜„ì¬ í˜ì´ì§€ë¥¼ forwardìŠ¤íƒì— ì¶”ê°€
+			currentURL = back.pop();		//backìŠ¤íƒì—ì„œ 1ê°œì˜ ìš”ì†Œë¥¼ êº¼ë‚´ì™€ í˜„ì¬ í˜ì´ì§€ë¡œ ì €ì¥
 			
 		}
 	}
 	
-	//¾ÕÀ¸·Î °¡±â ¸Ş¼­µå
+	//ì•ìœ¼ë¡œ ê°€ê¸° ë©”ì„œë“œ
 	public void goForward() {
 		if(!forward.isEmpty()) {
 			back.push(currentURL);
@@ -74,13 +74,13 @@ class Browser{
 		}
 	}
 	
-	//¹æ¹® ±â·Ï È®ÀÎÇÏ´Â ¸Ş¼­µå
+	//ë°©ë¬¸ ê¸°ë¡ í™•ì¸í•˜ëŠ” ë©”ì„œë“œ
 	public void history() {
 		System.out.println("-----------------------");
-		System.out.println("    ¹æ      ¹®      ±â      ·Ï");
+		System.out.println("    ë°©      ë¬¸      ê¸°      ë¡");
 		System.out.println("-----------------------");
 		System.out.println("back >> "+back);
-		System.out.println("Çö    Àç >>"+currentURL);
+		System.out.println("í˜„    ì¬ >>"+currentURL);
 		System.out.println("forward >>"+ forward);
 		System.out.println("------------------------");
 		System.out.println();

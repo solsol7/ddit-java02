@@ -12,7 +12,7 @@ public class ArrayListTest04 {
 		ArrayList<String> maxName=new ArrayList<>();
 		
 		for(int i=0; i<5; i++) {
-			System.out.print("º°¸í ÀÔ·Â : ");
+			System.out.print("ë³„ëª… ìž…ë ¥ : ");
 			list.add(sc.nextLine());
 		}
 		

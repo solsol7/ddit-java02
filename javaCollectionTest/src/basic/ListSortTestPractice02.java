@@ -9,21 +9,21 @@ public class ListSortTestPractice02 {
 	public static void main(String[] args) {
 		ArrayList<Member> memList = new ArrayList<Member>();
 		
-		memList.add(new Member(1, "È«±æµ¿", "010-1111-1111"));
-		memList.add(new Member(5, "ÀÌ¼ø½Å", "010-2222-1111"));
-		memList.add(new Member(9, "¼ºÃáÇâ", "010-3333-1111"));
-		memList.add(new Member(3, "°­°¨Âù", "010-4444-1111"));
-		memList.add(new Member(6, "ÀÏÁö¸Å", "010-5555-1111"));
-		memList.add(new Member(2, "º¯ÇĞµµ", "010-6666-1111"));
+		memList.add(new Member(1, "í™ê¸¸ë™", "010-1111-1111"));
+		memList.add(new Member(5, "ì´ìˆœì‹ ", "010-2222-1111"));
+		memList.add(new Member(9, "ì„±ì¶˜í–¥", "010-3333-1111"));
+		memList.add(new Member(3, "ê°•ê°ì°¬", "010-4444-1111"));
+		memList.add(new Member(6, "ì¼ì§€ë§¤", "010-5555-1111"));
+		memList.add(new Member(2, "ë³€í•™ë„", "010-6666-1111"));
 		
-		System.out.println("Á¤·ÄÀü ...");
+		System.out.println("ì •ë ¬ì „ ...");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
 		System.out.println("-----------------------------------------------");
 		
 		Collections.sort(memList, new Name());
-		System.out.println("Á¤·ÄÈÄ ...");
+		System.out.println("ì •ë ¬í›„ ...");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}

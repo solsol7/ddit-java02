@@ -1,10 +1,10 @@
 package basic;
 
 /*
-	ThreadÀÇ stop()¸Ş¼­µå¸¦ È£ÃâÇÏ¸é ¾²·¹µå°¡ ¹Ù·Î ¸ØÃá´Ù.
+	Threadì˜ stop()ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ë©´ ì“°ë ˆë“œê°€ ë°”ë¡œ ë©ˆì¶˜ë‹¤.
 	
-	ÀÌ ¶§ »ç¿ëÇÏ´ø ÀÚ¿øÀ» Á¤¸®ÇÏÁö ¸øÇÏ°í ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾î ³ªÁß¿¡ ½ÇÇàµÇ´Â
-	ÇÁ·Î±×·¥¿¡ ¿µÇâÀ» ÁÙ ¼ö ÀÖ´Ù. ±×·¡¼­ stop()¸Ş¼­µå´Â ºñÃßÃµÀ¸·Î µÇ¾î ÀÖ´Ù.
+	ì´ ë•Œ ì‚¬ìš©í•˜ë˜ ìì›ì„ ì •ë¦¬í•˜ì§€ ëª»í•˜ê³  í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì–´ ë‚˜ì¤‘ì— ì‹¤í–‰ë˜ëŠ”
+	í”„ë¡œê·¸ë¨ì— ì˜í–¥ì„ ì¤„ ìˆ˜ ìˆë‹¤. ê·¸ë˜ì„œ stop()ë©”ì„œë“œëŠ” ë¹„ì¶”ì²œìœ¼ë¡œ ë˜ì–´ ìˆë‹¤.
 */
 
 public class ThreadTest11 {
@@ -24,7 +24,7 @@ public class ThreadTest11 {
 */
 		//-------------------------------------------------
 		
-		//interrupt()¸Ş¼­µå¸¦ ÀÌ¿ëÇÑ ¾²·¹µå ¸ØÃß±â
+		//interrupt()ë©”ì„œë“œë¥¼ ì´ìš©í•œ ì“°ë ˆë“œ ë©ˆì¶”ê¸°
 		ThreadStopTest02 th2 = new ThreadStopTest02();
 		th2.start();
 		
@@ -38,7 +38,7 @@ public class ThreadTest11 {
 
 }
 
-// ¾²·¹µå¸¦ ¸ØÃß°Ô ÇÏ´Â ¿¬½À¿ë ¾²·¹µå
+// ì“°ë ˆë“œë¥¼ ë©ˆì¶”ê²Œ í•˜ëŠ” ì—°ìŠµìš© ì“°ë ˆë“œ
 class ThreadStopTest01 extends Thread{
 	private boolean stop;
 	
@@ -49,49 +49,49 @@ class ThreadStopTest01 extends Thread{
 	@Override
 	public void run() {
 		while(!stop) {
-			System.out.println("¾²·¹µå ½ÇÇà Áß..");
+			System.out.println("ì“°ë ˆë“œ ì‹¤í–‰ ì¤‘..");
 		}
 		
-		System.out.println("ÀÚ¿ø Á¤¸®");
-		System.out.println("¾²·¹µå Á¾·á...");
+		System.out.println("ìì› ì •ë¦¬");
+		System.out.println("ì“°ë ˆë“œ ì¢…ë£Œ...");
 		
 		
 	}
 }
 
-// interrupt() ¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© ¾²·¹µå¸¦ ¸ØÃß°Ô ÇÏ±â
+// interrupt() ë©”ì„œë“œë¥¼ ì´ìš©í•˜ì—¬ ì“°ë ˆë“œë¥¼ ë©ˆì¶”ê²Œ í•˜ê¸°
 class ThreadStopTest02 extends Thread{
 	@Override
 	public void run() {
-		//¹æ¹ı1 ==> interrupt()¸Ş¼­µå¿Í sleep()¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ´Â ¹æ¹ı
+		//ë°©ë²•1 ==> interrupt()ë©”ì„œë“œì™€ sleep()ë©”ì„œë“œë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•
 		/*
 		try {
 			while(true) {
-				System.out.println("....½ÇÇàÁß...");
+				System.out.println("....ì‹¤í–‰ì¤‘...");
 				Thread.sleep(1);
 			}
 		} catch (InterruptedException e) {
-			//Interrupt ¸¸³ª¸é try½ÇÇàÇÏ´ø Áß°£¿¡ ¿©±â·Î ¿È => ¾Æ¹«°Íµµ ¾È¾²¿©ÀÖÀ½ => ¹ØÀ¸·Î ³»·Á°¨
+			//Interrupt ë§Œë‚˜ë©´ tryì‹¤í–‰í•˜ë˜ ì¤‘ê°„ì— ì—¬ê¸°ë¡œ ì˜´ => ì•„ë¬´ê²ƒë„ ì•ˆì“°ì—¬ìˆìŒ => ë°‘ìœ¼ë¡œ ë‚´ë ¤ê°
 		}
 		
-		System.out.println("ÀÚ¿ø Á¤¸®...");
-		System.out.println("¾²·¹µå Á¾·á...");
+		System.out.println("ìì› ì •ë¦¬...");
+		System.out.println("ì“°ë ˆë“œ ì¢…ë£Œ...");
 		*/
 		
 		while(true) {
-			System.out.println("Thread ½ÇÇàÁß...");
-			//¹æ¹ı2 ==> interrupt()¸Ş¼­µå°¡ È£ÃâµÇ¾ú´ÂÁö ¿©ºÎ¸¦ °Ë»çÇØ¼­ Ã³¸®ÇÑ´Ù.
+			System.out.println("Thread ì‹¤í–‰ì¤‘...");
+			//ë°©ë²•2 ==> interrupt()ë©”ì„œë“œê°€ í˜¸ì¶œë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ê²€ì‚¬í•´ì„œ ì²˜ë¦¬í•œë‹¤.
 			
-			//°Ë»ç¹æ¹ı1 ==> ¾²·¹µåÀÇ ÀÎ½ºÅÏ½º ¸Ş¼­µåÀÎ isInterrupted()¸Ş¼­µå ÀÌ¿ëÇÏ±â
-			// isInterrupted() ==> interrupt()¸Ş¼­µå°¡ È£ÃâµÇ¸é true¸¦ ¹İÈ¯ÇÑ´Ù.
+			//ê²€ì‚¬ë°©ë²•1 ==> ì“°ë ˆë“œì˜ ì¸ìŠ¤í„´ìŠ¤ ë©”ì„œë“œì¸ isInterrupted()ë©”ì„œë“œ ì´ìš©í•˜ê¸°
+			// isInterrupted() ==> interrupt()ë©”ì„œë“œê°€ í˜¸ì¶œë˜ë©´ trueë¥¼ ë°˜í™˜í•œë‹¤.
 			/*
 			if(this.isInterrupted()) {
 				break;
 			}
 			*/
 			
-			//°Ë»ç¹æ¹ı2 ==> ¾²·¹µåÀÇ Á¤Àû ¸Ş¼­µåÀÎ interrupted()¸Ş¼­µå ÀÌ¿ëÇÏ±â
-			//interrupted() ==> interrupt()¸Ş¼­µå°¡ È£ÃâµÇ¸é true¸¦ ¹İÈ¯ÇÑ´Ù.
+			//ê²€ì‚¬ë°©ë²•2 ==> ì“°ë ˆë“œì˜ ì •ì  ë©”ì„œë“œì¸ interrupted()ë©”ì„œë“œ ì´ìš©í•˜ê¸°
+			//interrupted() ==> interrupt()ë©”ì„œë“œê°€ í˜¸ì¶œë˜ë©´ trueë¥¼ ë°˜í™˜í•œë‹¤.
 			if(Thread.interrupted()) {
 				break;
 			}

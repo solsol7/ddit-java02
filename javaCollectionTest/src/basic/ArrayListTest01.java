@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class ArrayListTest01 {
 
 	public static void main(String[] args) {
-		//ArrayListÀÇ ±âº»ÀûÀÎ »ç¿ë¹ıÀº Vector¿Í °°´Ù.
+		//ArrayListì˜ ê¸°ë³¸ì ì¸ ì‚¬ìš©ë²•ì€ Vectorì™€ ê°™ë‹¤.
 		
 		ArrayList list1 = new ArrayList();
 		
-		//add()¸Ş¼­µå·Î µ¥ÀÌÅÍ¸¦ Ãß°¡ÇÑ´Ù.
+		//add()ë©”ì„œë“œë¡œ ë°ì´í„°ë¥¼ ì¶”ê°€í•œë‹¤.
 		list1.add("aaa");
 		list1.add("bbb");
 		list1.add(123);
@@ -21,27 +21,27 @@ public class ArrayListTest01 {
 		System.out.println("size==>"+list1.size());
 		System.out.println();
 		
-		//³¢¿ö³Ö±âµµ °°´Ù
+		//ë¼ì›Œë„£ê¸°ë„ ê°™ë‹¤
 		list1.add(3,"zzz");
 		System.out.println("list1 =>"+list1);
 		
-		//get()¸Ş¼­µå·Î µ¥ÀÌÅÍ ²¨³»¿À±â
-		System.out.println("1¹øÂ° ÀÚ·á : "+list1.get(1));
+		//get()ë©”ì„œë“œë¡œ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
+		System.out.println("1ë²ˆì§¸ ìë£Œ : "+list1.get(1));
 		
-		//µ¥ÀÌÅÍ º¯°æÇÏ±â
+		//ë°ì´í„° ë³€ê²½í•˜ê¸°
 		String sTemp=(String)list1.set(3, "yyy");
 		System.out.println("list1 =>"+list1);
 		System.out.println("sTemp =>"+sTemp);
 		System.out.println();
 		
-		//»èÁ¦µµ °°´Ù.
+		//ì‚­ì œë„ ê°™ë‹¤.
 		list1.remove(3);
-		System.out.println("3¹øÂ° ÀÚ·á »èÁ¦ ÈÄ list1 =>"+list1);
+		System.out.println("3ë²ˆì§¸ ìë£Œ ì‚­ì œ í›„ list1 =>"+list1);
 		
 		list1.remove("bbb");
-		System.out.println("bbb ÀÚ·á »èÁ¦ ÈÄ list1 =>"+list1);
+		System.out.println("bbb ìë£Œ ì‚­ì œ í›„ list1 =>"+list1);
 		
-		//Á¦³×¸¯À» »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		//ì œë„¤ë¦­ì„ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		ArrayList<String> list2=new ArrayList<String>();
 		list2.add("AAAA");
 		list2.add("BBBB");
@@ -49,29 +49,29 @@ public class ArrayListTest01 {
 		list2.add("DDDD");
 		list2.add("EEEE");
 		
-		//Vector³ª ListÀÇ ÀüÃ¼ µ¥ÀÌÅÍ¸¦ Â÷·Ê·Î ²¨³»¼­ Ã³¸®ÇÒ ¶§´Â ¹İº¹¹®À» »ç¿ëÇÑ´Ù.
-		// (ÁÖ·Î for¹®)
+		//Vectorë‚˜ Listì˜ ì „ì²´ ë°ì´í„°ë¥¼ ì°¨ë¡€ë¡œ êº¼ë‚´ì„œ ì²˜ë¦¬í•  ë•ŒëŠ” ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•œë‹¤.
+		// (ì£¼ë¡œ forë¬¸)
 		
 		for(int i=0; i<list2.size(); i++) {
-			System.out.println(i + "¹øÂ° µ¥ÀÌÅÍ ==>"+list2.get(i));
+			System.out.println(i + "ë²ˆì§¸ ë°ì´í„° ==>"+list2.get(i));
 		}
 		System.out.println();
 		
-		//Çâ»óµÈ for¹®
+		//í–¥ìƒëœ forë¬¸
 		for(String str : list2) {
 			System.out.println(str);
 		}
 		
-		// contains(ºñ±³°´Ã¼) ==> ¸®½ºÆ®¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ Áß¿¡¼­ 'ºñ±³°´Ã¼'°¡ ÀÖÀ¸¸é true, ¾øÀ¸¸é false¸¦ ¹İÈ¯
-		System.out.println("DDDD°ªÀÇ Á¸Àç ¿©ºÎ : "+list2.contains("DDDD"));
-		System.out.println("ZZZZ°ªÀÇ Á¸Àç ¿©ºÎ : "+list2.contains("ZZZZ"));
+		// contains(ë¹„êµê°ì²´) ==> ë¦¬ìŠ¤íŠ¸ì— ì €ì¥ëœ ë°ì´í„° ì¤‘ì—ì„œ 'ë¹„êµê°ì²´'ê°€ ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ falseë¥¼ ë°˜í™˜
+		System.out.println("DDDDê°’ì˜ ì¡´ì¬ ì—¬ë¶€ : "+list2.contains("DDDD"));
+		System.out.println("ZZZZê°’ì˜ ì¡´ì¬ ì—¬ë¶€ : "+list2.contains("ZZZZ"));
 		
-		//indexOf(ºñ±³°´Ã¼)
-		//lastIndexOf(ºñ±³°´Ã¼) ==> ¸®½ºÆ®¿¡ 'ºñ±³°´Ã¼'°¡ ÀÖÀ¸¸é 'ºñ±³°´Ã¼'°¡ ÀúÀåµÈ index°ªÀ» ¹İÈ¯
-		//						  ¾øÀ¸¸é -1À» ¹İÈ¯ÇÑ´Ù.
-		//  -indexOf()¸Ş¼­µå´Â °Ë»ö ¹æÇâÀÌ ¾Õ¿¡¼­ µÚÂÊ ¹æÇâÀ¸·Î °Ë»öÇÏ°í
-		//   lastIndexOf() ¸Ş¼­µå´Â µÚ¿¡¼­ ¾ÕÂÊ ¹æÇâÀ¸·Î °Ë»öÇÑ´Ù.
-		//  -¸®½ºÆ®¿¡ 'ºñ±³°´Ã¼'¿Í °°Àº µ¥ÀÌÅÍ°¡ ¿©·¯°³¸é Ã¹¹øÂ°·Î Ã£¾ÆÁø µ¥ÀÌÅÍÀÇ À§Ä¡°ª(index°ª)À» ¹İÈ¯ÇÑ´Ù.
+		//indexOf(ë¹„êµê°ì²´)
+		//lastIndexOf(ë¹„êµê°ì²´) ==> ë¦¬ìŠ¤íŠ¸ì— 'ë¹„êµê°ì²´'ê°€ ìˆìœ¼ë©´ 'ë¹„êµê°ì²´'ê°€ ì €ì¥ëœ indexê°’ì„ ë°˜í™˜
+		//						  ì—†ìœ¼ë©´ -1ì„ ë°˜í™˜í•œë‹¤.
+		//  -indexOf()ë©”ì„œë“œëŠ” ê²€ìƒ‰ ë°©í–¥ì´ ì•ì—ì„œ ë’¤ìª½ ë°©í–¥ìœ¼ë¡œ ê²€ìƒ‰í•˜ê³ 
+		//   lastIndexOf() ë©”ì„œë“œëŠ” ë’¤ì—ì„œ ì•ìª½ ë°©í–¥ìœ¼ë¡œ ê²€ìƒ‰í•œë‹¤.
+		//  -ë¦¬ìŠ¤íŠ¸ì— 'ë¹„êµê°ì²´'ì™€ ê°™ì€ ë°ì´í„°ê°€ ì—¬ëŸ¬ê°œë©´ ì²«ë²ˆì§¸ë¡œ ì°¾ì•„ì§„ ë°ì´í„°ì˜ ìœ„ì¹˜ê°’(indexê°’)ì„ ë°˜í™˜í•œë‹¤.
 		list2.clear();
 		list2.add("AAAA");
 		list2.add("BBBB");
@@ -85,25 +85,25 @@ public class ArrayListTest01 {
 		list2.add("EEEE");
 		
 		System.out.println("list2 =>"+list2);
-		System.out.println("DDDDÀÇ À§Ä¡°ª : "+list2.indexOf("DDDD"));
-		System.out.println("DDDDÀÇ À§Ä¡°ª : "+list2.lastIndexOf("DDDD"));
-		System.out.println("ZZZZÀÇ À§Ä¡°ª : "+list2.lastIndexOf("ZZZZ"));//Ã£´Â µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é -1
+		System.out.println("DDDDì˜ ìœ„ì¹˜ê°’ : "+list2.indexOf("DDDD"));
+		System.out.println("DDDDì˜ ìœ„ì¹˜ê°’ : "+list2.lastIndexOf("DDDD"));
+		System.out.println("ZZZZì˜ ìœ„ì¹˜ê°’ : "+list2.lastIndexOf("ZZZZ"));//ì°¾ëŠ” ë°ì´í„°ê°€ ì—†ìœ¼ë©´ -1
 		
-		// -toArray() ==> ¸®½ºÆ® ¾ÈÀÇ µ¥ÀÌÅÍ¸¦ ¹è¿­·Î º¯È¯ÇØ¼­ ¹İÈ¯ÇÑ´Ù.
-		//			  ==> ±âº»ÀûÀ¸·Î ObjectÇü ¹è¿­·Î º¯È¯ÇÑ´Ù.
-		// -toArray(new Á¦³×¸¯Å¸ÀÔÀÚ·áÇü[0]) ==> Á¦³×¸¯ Å¸ÀÔÀÇ ¹è¿­·Î º¯È¯ÇØ¼­ ¹İÈ¯ÇÑ´Ù.
+		// -toArray() ==> ë¦¬ìŠ¤íŠ¸ ì•ˆì˜ ë°ì´í„°ë¥¼ ë°°ì—´ë¡œ ë³€í™˜í•´ì„œ ë°˜í™˜í•œë‹¤.
+		//			  ==> ê¸°ë³¸ì ìœ¼ë¡œ Objectí˜• ë°°ì—´ë¡œ ë³€í™˜í•œë‹¤.
+		// -toArray(new ì œë„¤ë¦­íƒ€ì…ìë£Œí˜•[0]) ==> ì œë„¤ë¦­ íƒ€ì…ì˜ ë°°ì—´ë¡œ ë³€í™˜í•´ì„œ ë°˜í™˜í•œë‹¤.
 		
 		Object[] strArr = list2.toArray();
-		//String[] strArr = (String[])list2.toArray();	//¹è¿­ - ¿©·¯°³ÀÇ µ¥ÀÌÅÍ°¡ ÇÑ²¨¹ø¿¡ µé¾î°¡´Â Æ² : ¹è¿­ ÀÚÃ¼¸¦ Çüº¯È¯ ÇÒ ¼ö´Â ¾øÀ½
-		System.out.println("¸®½ºÆ®ÀÇ °³¼ö : "+list2.size());
-		System.out.println("¹è¿­ÀÇ °³¼ö : "+strArr.length);
+		//String[] strArr = (String[])list2.toArray();	//ë°°ì—´ - ì—¬ëŸ¬ê°œì˜ ë°ì´í„°ê°€ í•œêº¼ë²ˆì— ë“¤ì–´ê°€ëŠ” í‹€ : ë°°ì—´ ìì²´ë¥¼ í˜•ë³€í™˜ í•  ìˆ˜ëŠ” ì—†ìŒ
+		System.out.println("ë¦¬ìŠ¤íŠ¸ì˜ ê°œìˆ˜ : "+list2.size());
+		System.out.println("ë°°ì—´ì˜ ê°œìˆ˜ : "+strArr.length);
 		for(int i=0; i<strArr.length; i++) {
-			System.out.println(i+"¹øÂ° ÀÚ·á : "+strArr[i]);
+			System.out.println(i+"ë²ˆì§¸ ìë£Œ : "+strArr[i]);
 		}
 		
 		System.out.println("-----------------------------------------------");
 		
-		//Á¦³×¸¯ Å¸ÀÔÀÇ ¹è¿­·Î º¯È¯ÇØ¼­ °¡Á®¿À±â
+		//ì œë„¤ë¦­ íƒ€ì…ì˜ ë°°ì—´ë¡œ ë³€í™˜í•´ì„œ ê°€ì ¸ì˜¤ê¸°
 		String[] strArr2 = list2.toArray(new String[0]);
 		for(String s : strArr2) {
 			System.out.println(s);

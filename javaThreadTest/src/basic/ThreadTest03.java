@@ -3,23 +3,23 @@ package basic;
 public class ThreadTest03 {
 
 	public static void main(String[] args) {
-		// ¾²·¹µåÀÇ ½ÇÇà ½Ã°£À» Ã¼Å©ÇØ º¸ÀÚ...
+		// ì“°ë ˆë“œì˜ ì‹¤í–‰ ì‹œê°„ì„ ì²´í¬í•´ ë³´ì...
 		Thread th = new Thread(new MyRunner());
 		
-		//1970³â 1¿ù 1ÀÏ 0½Ã 0ºĞ 0ÃÊ(Ç¥ÁØ½Ã°£)ºÎÅÍ ÇöÀç ½Ã°£±îÁö °æ°úÇÑ ½Ã°£À» ¹Ğ¸®¼¼ÄÁµå ´ÜÀ§·Î ¹İÈ¯ÇÑ´Ù.
+		//1970ë…„ 1ì›” 1ì¼ 0ì‹œ 0ë¶„ 0ì´ˆ(í‘œì¤€ì‹œê°„)ë¶€í„° í˜„ì¬ ì‹œê°„ê¹Œì§€ ê²½ê³¼í•œ ì‹œê°„ì„ ë°€ë¦¬ì„¸ì»¨ë“œ ë‹¨ìœ„ë¡œ ë°˜í™˜í•œë‹¤.
 		long startTime = System.currentTimeMillis();
 		
 		th.start();
 		
 		try {
-			th.join();			//ÇöÀçÀÇ À§Ä¡¿¡¼­ ´ë»óÀÌ µÇ´Â ¾²·¹µå(Áö±İÀº º¯¼ö th°¡ °¡¸®Å°´Â ¾²·¹µå)°¡ Á¾·áµÉ ¶§ ±îÁö ±â´Ù¸°´Ù.
+			th.join();			//í˜„ì¬ì˜ ìœ„ì¹˜ì—ì„œ ëŒ€ìƒì´ ë˜ëŠ” ì“°ë ˆë“œ(ì§€ê¸ˆì€ ë³€ìˆ˜ thê°€ ê°€ë¦¬í‚¤ëŠ” ì“°ë ˆë“œ)ê°€ ì¢…ë£Œë  ë•Œ ê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		} catch (InterruptedException e) {
 				
 		}
 		
 		long endTime = System.currentTimeMillis();
 		
-		System.out.println("°æ°ú½Ã°£ : "+(endTime - startTime));
+		System.out.println("ê²½ê³¼ì‹œê°„ : "+(endTime - startTime));
 	}
 }
 
@@ -27,9 +27,9 @@ class MyRunner implements Runnable{
 	@Override
 	public void run() {
 		long sum=0L;
-		for(long i=1; i<=1_000_000_000L; i++) {	//¼ıÀÚ¿¡ _¾²¸é ¹«½ÃµÊ =>Å« ¼ıÀÚ ±¸º°ÇÏ±â ÆíÇÏ°Ô ¾¸
+		for(long i=1; i<=1_000_000_000L; i++) {	//ìˆ«ìì— _ì“°ë©´ ë¬´ì‹œë¨ =>í° ìˆ«ì êµ¬ë³„í•˜ê¸° í¸í•˜ê²Œ ì”€
 			sum+=i;
 		}
-		System.out.println("ÇÕ°è : "+sum);
+		System.out.println("í•©ê³„ : "+sum);
 	}
 }

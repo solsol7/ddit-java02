@@ -3,13 +3,13 @@ package enumTest;
 
 public class EnumTestPractice {
 	
-	public enum fruits{»ç°ú, ¿À·»Áö, Æ÷µµ}
+	public enum fruits{ì‚¬ê³¼, ì˜¤ë Œì§€, í¬ë„}
 
 	public enum Season01{
-		º½("3¿ù~5¿ù",1),
-		¿©¸§("6¿ù~8¿ù", 35),
-		°¡À»("9¿ù~11¿ù",32),
-		°Ü¿ï("12¿ù~2¿ù",23);
+		ë´„("3ì›”~5ì›”",1),
+		ì—¬ë¦„("6ì›”~8ì›”", 35),
+		ê°€ì„("9ì›”~11ì›”",32),
+		ê²¨ìš¸("12ì›”~2ì›”",23);
 		
 		private int num;
 		private String month;
@@ -30,10 +30,10 @@ public class EnumTestPractice {
 	
 	
 	public static void main(String[] args) {
-		Season01 s1=Season01.valueOf("¿©¸§");
+		Season01 s1=Season01.valueOf("ì—¬ë¦„");
 		System.out.println(s1.getMonth());
 		System.out.println(s1.getNum());
-		fruits f1=fruits.valueOf("»ç°ú");
+		fruits f1=fruits.valueOf("ì‚¬ê³¼");
 		System.out.println(f1.ordinal());
 		System.out.println(f1.name());
 

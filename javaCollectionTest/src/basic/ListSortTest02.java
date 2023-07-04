@@ -9,33 +9,33 @@ public class ListSortTest02 {
 	public static void main(String[] args) {
 		ArrayList<Member> memList = new ArrayList<Member>();
 		
-		memList.add(new Member(1, "È«±æµ¿", "010-1111-1111"));
-		memList.add(new Member(5, "ÀÌ¼ø½Å", "010-2222-1111"));
-		memList.add(new Member(9, "¼ºÃáÇâ", "010-3333-1111"));
-		memList.add(new Member(3, "°­°¨Âù", "010-4444-1111"));
-		memList.add(new Member(6, "ÀÏÁö¸Å", "010-5555-1111"));
-		memList.add(new Member(2, "º¯ÇĞµµ", "010-6666-1111"));
+		memList.add(new Member(1, "í™ê¸¸ë™", "010-1111-1111"));
+		memList.add(new Member(5, "ì´ìˆœì‹ ", "010-2222-1111"));
+		memList.add(new Member(9, "ì„±ì¶˜í–¥", "010-3333-1111"));
+		memList.add(new Member(3, "ê°•ê°ì°¬", "010-4444-1111"));
+		memList.add(new Member(6, "ì¼ì§€ë§¤", "010-5555-1111"));
+		memList.add(new Member(2, "ë³€í•™ë„", "010-6666-1111"));
 		
-		System.out.println("Á¤·ÄÀü ...");
+		System.out.println("ì •ë ¬ì „ ...");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
 		System.out.println("-----------------------------------------------");
 		
-		Collections.sort(memList);	//´Ù ¸â¹ö - ¸â¹ö´Â ³»ºÎÁ¤·Ä±âÁØÀÌ ÇöÀç ¾ø¾î¼­ sort¸øÇÔ - ¿¡·¯¶ä
+		Collections.sort(memList);	//ë‹¤ ë©¤ë²„ - ë©¤ë²„ëŠ” ë‚´ë¶€ì •ë ¬ê¸°ì¤€ì´ í˜„ì¬ ì—†ì–´ì„œ sortëª»í•¨ - ì—ëŸ¬ëœ¸
 		
-		System.out.println("Á¤·ÄÈÄ ...");
+		System.out.println("ì •ë ¬í›„ ...");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
 		System.out.println("-----------------------------------------------");
 		
-		//È¸¿øÀÌ¸§ÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄµÇ´Â ¿ÜºÎ Á¤·Ä ±âÁØÀ» ¸¸µé¾î Á¤·ÄÇÏ¿© Ãâ·ÂÇÏ½Ã¿À.
-		//Å¬·¡½º¸í(NameSort)
+		//íšŒì›ì´ë¦„ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ë˜ëŠ” ì™¸ë¶€ ì •ë ¬ ê¸°ì¤€ì„ ë§Œë“¤ì–´ ì •ë ¬í•˜ì—¬ ì¶œë ¥í•˜ì‹œì˜¤.
+		//í´ë˜ìŠ¤ëª…(NameSort)
 		
 		Collections.sort(memList, new NameSort());
 		
-		System.out.println("Á¤·ÄÈÄ ...");
+		System.out.println("ì •ë ¬í›„ ...");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
@@ -48,18 +48,18 @@ public class ListSortTest02 {
 class NameSort implements Comparator<Member>{//////////1
 	@Override
 	public int compare(Member mem1, Member mem2) {
-		mem1.getName().compareTo(mem2.getName());	//StringÀº ³»ºÎÁ¤·Ä±âÁØ ÀÖÀ½ - ¿À¸§Â÷¼ø
+		mem1.getName().compareTo(mem2.getName());	//Stringì€ ë‚´ë¶€ì •ë ¬ê¸°ì¤€ ìˆìŒ - ì˜¤ë¦„ì°¨ìˆœ
 		return mem1.getName().compareTo(mem2.getName());/////////////////////2
 	}
 }
 	
 
-//MemberÅ¬·¡½º ÀÛ¼º
-//È¸¿ø¹øÈ£ÀÇ ¿À¸§Â÷¼øÀÇ ³»ºÎ Á¤·Ä ±âÁØ ¸¸µé±â
+//Memberí´ë˜ìŠ¤ ì‘ì„±
+//íšŒì›ë²ˆí˜¸ì˜ ì˜¤ë¦„ì°¨ìˆœì˜ ë‚´ë¶€ ì •ë ¬ ê¸°ì¤€ ë§Œë“¤ê¸°
 class Member implements Comparable<Member>{	/////////////3.
-	private int num;	//È¸¿ø¹øÈ£
-	private String name;	//È¸¿øÀÌ¸§
-	private String tel;		//ÀüÈ­¹øÈ£
+	private int num;	//íšŒì›ë²ˆí˜¸
+	private String name;	//íšŒì›ì´ë¦„
+	private String tel;		//ì „í™”ë²ˆí˜¸
 	
 	public Member(int num, String name, String tel) {
 		this.num=num;
@@ -96,10 +96,10 @@ class Member implements Comparable<Member>{	/////////////3.
 		return "Member [num=" + num + ", name=" + name + ", tel=" + tel + "]";
 	}
 
-	//È¸¿ø¹øÈ£ÀÇ ¿À¸§Â÷¼ø Á¤·Ä ±âÁØ ¼³Á¤ÇÏ±â
+	//íšŒì›ë²ˆí˜¸ì˜ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ ê¸°ì¤€ ì„¤ì •í•˜ê¸°
 	@Override						////////////////////////////////4.
-	public int compareTo(Member mem) {/*//ÇöÀçÀÇ °ªÇÏ°í ¸Å°³º¯¼ö·Î µé¾î¿Â °ªÀ» ºñ±³ÇÔ - ÇöÀçÀÇ °ªÀÌ ¾ÕÀÇ µ¥ÀÌÅÍÀÌ°í ¸Å°³º¯¼ö°¡ µÚÀÇ µ¥ÀÌÅÍ
-		if(this.getNum() > mem.getNum()) {		//ÀÌ°Ç Áö±İ ³»¸²Â÷¼ø -> ¼ø¼­ ¹Ù²ãÁà¾ßÇÔ -> 1 ¹İÈ¯
+	public int compareTo(Member mem) {/*//í˜„ì¬ì˜ ê°’í•˜ê³  ë§¤ê°œë³€ìˆ˜ë¡œ ë“¤ì–´ì˜¨ ê°’ì„ ë¹„êµí•¨ - í˜„ì¬ì˜ ê°’ì´ ì•ì˜ ë°ì´í„°ì´ê³  ë§¤ê°œë³€ìˆ˜ê°€ ë’¤ì˜ ë°ì´í„°
+		if(this.getNum() > mem.getNum()) {		//ì´ê±´ ì§€ê¸ˆ ë‚´ë¦¼ì°¨ìˆœ -> ìˆœì„œ ë°”ê¿”ì¤˜ì•¼í•¨ -> 1 ë°˜í™˜
 			return 1;
 		}else if(this.getNum()<mem.getNum()) {
 			return -1;
@@ -108,10 +108,10 @@ class Member implements Comparable<Member>{	/////////////3.
 		}
 		
 		*/
-		//if¹® ¾È¾²°í ÇÏ´Â ¹æ¹ı
-		//- WrapperÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ´Â ¹æ¹ı1 (·¡ÆÛÅ¬·¡½º¿¡µµ ³»ºÎÁ¤·Ä ±âÁØÀÌ ÀÖ´Ù. - Integer)
+		//ifë¬¸ ì•ˆì“°ê³  í•˜ëŠ” ë°©ë²•
+		//- Wrapperí´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•1 (ë˜í¼í´ë˜ìŠ¤ì—ë„ ë‚´ë¶€ì •ë ¬ ê¸°ì¤€ì´ ìˆë‹¤. - Integer)
 		return new Integer(this.getNum()).compareTo(mem.getNum());	/////////////////////////////6.
-		//- WrapperÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ´Â ¹æ¹ı2
+		//- Wrapperí´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•2
 		//return Integer.compare(this.getNum(), mem.getNum());
 	}
 }
