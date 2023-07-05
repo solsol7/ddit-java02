@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -324,10 +325,32 @@ public class PhoneBookTest {
 	}
 	
 	public void setting() {
-		File file = new File("d:/d_other","phoneBookData.dat");
+		FileOutputStream fout = null;
+		BufferedOutputStream bout = null;
+		ObjectOutputStream oout = null;
+		
+		File file = new File("d:/d_other");
+		if(!file.exists()) file.mkdirs();
+		file = new File(file,"phoneBookData.dat");
+		
+		try {
+			if(!file.exists()) file.createNewFile();
+			fout = new FileOutputStream(file,true);
+			bout = new BufferedOutputStream(fout);
+			oout = new ObjectOutputStream(bout);
+			
+			oout.writeObject(null);
+			
+		} catch (IOException e) {
+			
+		}finally {
+			if(oout!=null)try {oout.close();} catch (Exception e2) {}
+		}
+		
 		FileInputStream fin = null;
 		BufferedInputStream bin = null;
 		ObjectInputStream oin = null;
+		
 		List<Phone> list = new ArrayList<>();
 		
 		try {
@@ -344,6 +367,8 @@ public class PhoneBookTest {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		}finally {
+			if(oin!=null)try {oin.close();} catch (IOException e2) {}
 		}
 		
 		for(int i=0; i<list.size(); i++) {
@@ -362,20 +387,18 @@ public class PhoneBookTest {
 			fout = new FileOutputStream(file);
 			bout = new BufferedOutputStream(fout);
 			oout = new ObjectOutputStream(bout);
-			
-			for(int i=0; i<phoneBookMap.size(); i++) {
-				
-			}
+
 			for(String key : phoneBookMap.keySet()) {
 				oout.writeObject(phoneBookMap.get(key));
 			}
+			oout.writeObject(null);
 			
 		} catch (IOException e) {
-			
+			e.printStackTrace();
 		}finally {
 			if(oout !=null)try {oout.close();} catch (IOException e2) {}
 		}
-		
+		System.out.println("전화번호 저장 완료!!");
 	}
 	
 	private void search() {
@@ -494,11 +517,6 @@ public class PhoneBookTest {
 		System.out.println("'" + name + "'" + "전화번호 등록 완료!!");
 	}
 
-	private int test() {
-		System.out.println("나랄라");
-		return 1;
-	}
-
 	public static void main(String[] args) {
 		//PhoneBookTest p=new PhoneBookTest();
 		//int i =p.test();
@@ -508,7 +526,7 @@ public class PhoneBookTest {
 	}
 }
 
-class Phone {
+class Phone implements Serializable{
 	private String name;
 	private String tel;
 	private String addr;

@@ -9,7 +9,7 @@ public class FileIOTest02 {
 		// 파일로 데이터 출력하기 ==> 바이트 기반 스트림 이용
 		try {
 			//파일 출력용 스트림 객체 생성 ==> 출력할 파일 지정해준다.
-			FileOutputStream fout = new FileOutputStream("d:/d_other/out.txt");
+			FileOutputStream fout = new FileOutputStream("c:/d_other/out.txt");
 			
 			for(char c='A'; c<='Z'; c++) {
 				fout.write(c);		//c 변수의 데이터를 파일로 출력한다.
