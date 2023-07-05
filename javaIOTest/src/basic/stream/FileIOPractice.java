@@ -62,8 +62,8 @@ public class FileIOPractice {
 				System.out.print(temp);
 				System.out.println();
 			}
-			
 			bfr.close();
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
