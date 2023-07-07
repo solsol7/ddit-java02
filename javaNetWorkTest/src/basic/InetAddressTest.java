@@ -2,7 +2,8 @@ package basic;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
+//수업
+/*
 public class InetAddressTest {
 
 	public static void main(String[] args) throws UnknownHostException {
@@ -28,4 +29,13 @@ public class InetAddressTest {
 		}
 		
 	}
+}
+*/
+
+public class InetAddressTest {
+
+	public static void main(String[] args){
+		
+	}
+	
 }

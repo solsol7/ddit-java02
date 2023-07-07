@@ -22,6 +22,7 @@ public class FileIOTest04 {
 			
 			int c;
 			
+			
 			//콘솔에서 입력할 때 입력의 끝은 'Ctrl' + 'Z'키를 누르면 된다.
 			while((c= isr.read()) !=-1) {
 				fw.write(c);		//콘솔로 입력 받은 데이터를 파일에 출력한다.
@@ -30,11 +31,10 @@ public class FileIOTest04 {
 			isr.close();
 			fw.close();
 			
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
 }
