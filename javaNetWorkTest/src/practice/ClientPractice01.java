@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.InputStream;
 import java.net.Socket;
 
-public class ClientPractice02 {
+public class ClientPractice01 {
 	
 	public static void main(String[] args) {
 		try {
@@ -18,7 +18,7 @@ public class ClientPractice02 {
 			System.out.println("서버가 보낸 메세지");
 			System.out.println(din.readUTF());
 			
-			FileWriter fw = new FileWriter
+			
 			
 			din.close();
 			
