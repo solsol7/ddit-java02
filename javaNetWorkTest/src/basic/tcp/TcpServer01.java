@@ -19,6 +19,9 @@ public class TcpServer01 {
 		//				==> 연결 요청이 오면 새로운 Socket객체를 생성해서 클라이언트의 Socket과 연결하고, 연결된 Socket객체를 반환한다.
 		Socket socket = server.accept();		//클라이언트와 연결된 소켓 =>클라이언트 요청이 와서 소켓이 연결이 되면 연결된 소켓 반환하면서 그 다음 진행
 		
+
+		
+		
 		//accept()메서드 명령 이후는 클라이언트와 연결된 후에 처리할 내용을 기술하면 된다.
 		System.out.println();
 		System.out.println("클라이언트와 연결되었습니다...");
