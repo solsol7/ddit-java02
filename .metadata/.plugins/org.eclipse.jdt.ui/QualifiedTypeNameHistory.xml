@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="basic.ProducerThread"/>
-<fullyQualifiedTypeName name="basic.ConsumerThread"/>
-<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="basic.file.FileTest03"/>
-<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
-<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="basic.stream.FileIOTest04"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalIconFactory.FolderIcon16"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -40,24 +32,32 @@
 <fullyQualifiedTypeName name="basic.tcp.TcpFileClient"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpFileServer"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.net.ServerSocket"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatServer"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatServer.ServerReceiver"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatClient"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
-<fullyQualifiedTypeName name="java.net.Socket"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
-<fullyQualifiedTypeName name="java.io.DataInputStream"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatClient.ClientSender"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatClient.ClientReceiver"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.net.DatagramSocket"/>
 <fullyQualifiedTypeName name="java.net.InetAddress"/>
 <fullyQualifiedTypeName name="java.net.DatagramPacket"/>
+<fullyQualifiedTypeName name="basic.JdbcTest02"/>
+<fullyQualifiedTypeName name="java.net.Socket"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.net.ServerSocket"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>
