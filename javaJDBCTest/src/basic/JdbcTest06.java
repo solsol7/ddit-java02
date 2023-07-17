@@ -395,8 +395,9 @@ public class JdbcTest06 {
 		System.out.println("새로운 전화번호 >> ");
 		String newMemTel = sc.next();
 		
+		sc.nextLine();			//버퍼 비우기
 		System.out.println("새로운 회원주소 >> ");
-		String newMemAddr = sc.next();
+		String newMemAddr = sc.nextLine();
 		
 		try {
 			conn = DBUtil.getConnection();
