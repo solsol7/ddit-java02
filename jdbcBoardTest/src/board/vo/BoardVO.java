@@ -8,14 +8,7 @@ public class BoardVO {
 	private String board_date;
 	private int board_cnt;
 	private String board_content;
-	
-	private static BoardVO vo;
-	private BoardVO() {}
-	
-	public static BoardVO getInstance() {
-		if(vo==null) vo = new BoardVO();
-		return vo;
-	}
+
 
 	public int getBoard_no() {
 		return board_no;
