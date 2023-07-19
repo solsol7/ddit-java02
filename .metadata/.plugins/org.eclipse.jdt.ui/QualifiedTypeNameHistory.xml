@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="basic.tcp.TcpFileClient"/>
-<fullyQualifiedTypeName name="basic.tcp.TcpFileServer"/>
-<fullyQualifiedTypeName name="java.io.OutputStream"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="basic.tcp.TcpMultiChatServer"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatServer.ServerReceiver"/>
 <fullyQualifiedTypeName name="basic.tcp.TcpMultiChatClient"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
@@ -27,7 +20,6 @@
 <fullyQualifiedTypeName name="basic.JdbcTest06"/>
 <fullyQualifiedTypeName name="util.DBUtil"/>
 <fullyQualifiedTypeName name="basic.JavaDocTest"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
@@ -55,9 +47,17 @@
 <fullyQualifiedTypeName name="board.service.BoardService"/>
 <fullyQualifiedTypeName name="board.service.BoardServiceImpl"/>
 <fullyQualifiedTypeName name="board.controller.BoardController"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="board.dao.BoardDao"/>
 <fullyQualifiedTypeName name="board.dao.BoardDaoImpl"/>
 <fullyQualifiedTypeName name="board.vo.BoardVO"/>
+<fullyQualifiedTypeName name="basic.LprodMybatisTest"/>
+<fullyQualifiedTypeName name="vo.LprodVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 </qualifiedTypeNameHistroy>

@@ -15,14 +15,15 @@
 	
 	<!-- 쿼리문에서 사용되는 VO객체의 전체 이름을 대신해서 사용할 alias를 저장하는 부분 -->
 	<!-- 전체 이름을 사용하면 클래스 이름이 길어지는데 그것을 짧게 사용하기 위한 별칭 설정 -->
-	<!-- 
+
 	<typeAliases>
-	
+<!-- 		<typeAlias type="클래스의 전체 경로" alias="별칭"/> -->
+		<typeAlias type="vo.LprodVO" alias="lprodVo"/>
 	</typeAliases>
-	 -->
+	
 	 
 	 <!-- DB 연결 설정 부분 -->
-	 <environments default="">
+	 <environments default="oracleDevelopment">
 	 	<environment id="oracleDevelopment">
 	 		<transactionManager type="JDBC"/>
 	 		<dataSource type="POOLED">
@@ -44,4 +45,8 @@
 	 		
 	 	</mappers>
 	 -->
+	 <mappers>
+	   <mapper resource="mybatis/mappers/lprod-mapper.xml"/>
+	   <mapper resource="mybatis/mappers/jdbc-mapper.xml"/>
+	 </mappers>
 </configuration>
