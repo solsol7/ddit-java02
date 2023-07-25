@@ -2,9 +2,11 @@ package basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /*
 	이 예제는 배포 서술자(DD, Deployment Descriptor ==> web.xml)를 이용해서
 	실행할 Servlet을 설정하여 처리하는 예제
@@ -16,8 +18,6 @@ import javax.servlet.http.HttpServlet;
 	- /webTest ==> 컨텍스트 패스 (보통 프로젝트 이름으로 지정한다.)
 	- /servletTest01.do ==> 서블릿 요청 URL패턴
  */
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 // 서블릿 클래스는 HttpServlet을 상속해서 작성한다.
 public class ServletTest01 extends HttpServlet {
@@ -46,7 +46,7 @@ public class ServletTest01 extends HttpServlet {
 			.append("</body></html>");
 	}
 	
-	//doPost()메서드 ==> POST방식의 요청을 처리하느 ㄴ메서드
+	//doPost()메서드 ==> POST방식의 요청을 처리하는 메서드
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
