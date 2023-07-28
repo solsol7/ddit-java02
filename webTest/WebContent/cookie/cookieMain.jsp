@@ -9,6 +9,6 @@
 <body>
 <h2>cookie연습용 main페이지 입니다.</h2>
 <br>
-<a href="cookieLogin.jsp">Login 창으로 이동</a>
+<a href="<%=request.getContextPath()%>/cookie/cookieLogin.jsp">Login 창으로 이동</a>
 </body>
 </html>

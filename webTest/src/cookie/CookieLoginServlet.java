@@ -17,7 +17,37 @@ public class CookieLoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
+		// userid, userpass, chkid 값 받기
+		String userId = request.getParameter("userid");
+		String pass = request.getParameter("userpass");
+		String chkid = request.getParameter("chkid");
+		
+		// userId를 쿠키값으로 갖는 Cookie객체 생성 (쿠키이름 : USERID )
+		Cookie userCookie = new Cookie("USERID",userId);
+		
+		System.out.println("체크박스의 체크 여부 : "+chkid);
+		
+		// 체크박스의 체크 여부에 따라 쿠키 저장 확인
+		if(chkid!=null) {	// 체크박스가 체크되었을 때
+			response.addCookie(userCookie);	// 쿠키 저장
+		}else {
+			userCookie.setMaxAge(0);
+			response.addCookie(userCookie);	// 쿠키 삭제
+		}
+		
+		if("test".equals(userId) && "1234".equals(pass)) { //로그인 성공
+			response.sendRedirect(request.getContextPath()+"/cookie/cookieMain.jsp");
+		}else {
+			response.sendRedirect(request.getContextPath()+"/cookie/cookieLogin.jsp");
+		}
 
+	}
+	
+	
+	
+/*
 //		response.setCharacterEncoding("utf-8");
 //		response.setContentType("text/html; charset='utf-8'");
 		request.setCharacterEncoding("utf-8");
@@ -30,20 +60,21 @@ public class CookieLoginServlet extends HttpServlet {
 		
 		Cookie c1= null;
 
-		if (cookieArr == null) {
-			Cookie cookie = new Cookie("id", id);
-			response.addCookie(cookie);
-		} else {
-			for (Cookie cookie : cookieArr) {
-				if ("id".equals(cookie.getName())) {
-					cookie.setValue(id);
-					response.addCookie(cookie);
-					c1=cookie;
-				}
+
+		for (Cookie c : cookieArr) {
+			if (!"id".equals(c.getName())){
+				Cookie cookie = new Cookie("id", id);
+				response.addCookie(cookie);
+			}else if("id".equals(c.getName())){
+				Cookie cookie = c;
+				cookie.setValue(id);
+				response.addCookie(cookie);
 			}
 		}
+	
 
 		
+
 
 		if ("test".equals(id) && "1234".equals(pass)) {
 			RequestDispatcher rd = request.getRequestDispatcher("cookie/cookieMain.jsp");
@@ -54,6 +85,7 @@ public class CookieLoginServlet extends HttpServlet {
 		}
 
 	}
+*/
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -62,3 +94,4 @@ public class CookieLoginServlet extends HttpServlet {
 	}
 
 }
+
