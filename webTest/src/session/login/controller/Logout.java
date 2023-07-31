@@ -1,4 +1,4 @@
-package session;
+package session.login.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,25 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/sessionLogin.do")
-public class SessionLogin extends HttpServlet {
+@WebServlet("/logout.do")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		
-		String userId = request.getParameter("userid");
-		String userPass = request.getParameter("userpass");
-		
 		HttpSession session = request.getSession();
 		
-		if("admin".equals(userId)&&"1234".equals(userPass)) {
-			session.setAttribute("USERID", userId);
-		}
+		session.invalidate();
 		
-		response.sendRedirect(request.getContextPath()+"/session/sessionLogin.jsp");
-		
+		response.sendRedirect(request.getContextPath()+"/login.do");
 	}
 
 
