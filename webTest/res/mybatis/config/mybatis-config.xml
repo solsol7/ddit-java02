@@ -19,6 +19,8 @@
 	<typeAliases>
 <!-- 		<typeAlias type="클래스의 전체 경로" alias="별칭"/> -->
 		<typeAlias type="session.login.vo.MemberVO" alias="memVo"/>
+		<typeAlias type="vo.LprodVO" alias="lprodVo"/>
+		<typeAlias type="vo.FileInfoVO" alias="fileVo"/>
 	</typeAliases>
 	
 	 
@@ -47,5 +49,7 @@
 	 -->
 	 <mappers>
 	   <mapper resource="mybatis/mappers/member-mapper.xml"/>
+	   <mapper resource="mybatis/mappers/lprod-mapper.xml"/>
+	   <mapper resource="mybatis/mappers/fileinfo-mapper.xml"/>
 	 </mappers>
 </configuration>

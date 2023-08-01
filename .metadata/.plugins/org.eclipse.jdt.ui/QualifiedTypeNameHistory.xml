@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="mvc.controller.MemberController"/>
 <fullyQualifiedTypeName name="mvc.vo.MemberVO"/>
 <fullyQualifiedTypeName name="util.DBUtil3"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="basic.singleton.MySingleton"/>
 <fullyQualifiedTypeName name="mvc.dao.IMemberDao"/>
 <fullyQualifiedTypeName name="mvc.dao.MemberDaoImpl"/>
@@ -37,7 +36,6 @@
 <fullyQualifiedTypeName name="member.dao.IMemberDaoImpl"/>
 <fullyQualifiedTypeName name="board.dao.BoardDaoImpl"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="vo.BoardVO"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
@@ -59,5 +57,7 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="json.SampleVO"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

@@ -72,6 +72,52 @@ $(function(){		// 현재 페이지를 웹브라우저가 읽어서 DOM객체로 
 			dataType : "json"	
 		});
 	})
+	
+	$("#listBtn").on('click',function(){
+		$.ajax({
+			url : "<%=request.getContextPath()%>/jsonController.do",
+			type : "post",
+			data : "choice=list",
+	
+			success : function(data){
+				//data => [{"num":100,"name":"강감찬"},{"num":200,"name":"이순신"},
+				//			{"num":300,"name":"성춘향"},{"num":400,"name":"이몽룡"}]
+				// 배열 안에 객체가 들어간 형태
+				let htmlCode = "";
+				$.each(data, function(i,v){
+					htmlCode += i +"번째 자료<br>";
+					htmlCode += "번호 : " + v.num + "<br>";
+					htmlCode += "이름 : " + v.name + "<hr>";
+				});
+				$('#result').html(htmlCode);
+			},
+			error : function(xhr){
+				alert("오류...")
+			},
+			dataType : "json"	
+		});
+	})
+	
+	$("#mapBtn").on('click',function(){
+		$.ajax({
+			url : "<%=request.getContextPath()%>/jsonController.do",
+			type : "post",
+			data : "choice=map",
+	
+			success : function(data){
+				//data ==> {"name":"이순신","tel":"010-1234-5678","addr":"대전시 중구 오류동"}
+				let htmlCode = "이름 : " + data.name + "<br>";
+				htmlCode += "전화번호 : " + data.tel + "<br>";
+				htmlCode += "주소 : " + data.addr + "<br>";
+				
+				$('#result').html(htmlCode);
+			},
+			error : function(xhr){
+				alert("오류...")
+			},
+			dataType : "json"	
+		});
+	})
 });
 
 </script>
