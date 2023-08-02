@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="mvc.vo.MemberVo"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
-<fullyQualifiedTypeName name="mvc.service.IMemberService"/>
-<fullyQualifiedTypeName name="mvc.controller.MemberController"/>
-<fullyQualifiedTypeName name="mvc.vo.MemberVO"/>
-<fullyQualifiedTypeName name="util.DBUtil3"/>
-<fullyQualifiedTypeName name="basic.singleton.MySingleton"/>
-<fullyQualifiedTypeName name="mvc.dao.IMemberDao"/>
-<fullyQualifiedTypeName name="mvc.dao.MemberDaoImpl"/>
-<fullyQualifiedTypeName name="mvc.service.MemberServiceImpl"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
@@ -26,7 +14,6 @@
 <fullyQualifiedTypeName name="java.io.Reader"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="vo.LprodVO"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
 <fullyQualifiedTypeName name="member.dao.IMemberDao"/>
@@ -35,7 +22,6 @@
 <fullyQualifiedTypeName name="vo.MemberVO"/>
 <fullyQualifiedTypeName name="member.dao.IMemberDaoImpl"/>
 <fullyQualifiedTypeName name="board.dao.BoardDaoImpl"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vo.BoardVO"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
@@ -46,8 +32,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
 <fullyQualifiedTypeName name="javax.websocket.Session"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
-<fullyQualifiedTypeName name="util.MybatisUtil"/>
 <fullyQualifiedTypeName name="session.login.dao.IMemberDao"/>
 <fullyQualifiedTypeName name="session.login.dao.MemberDaoImpl"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
@@ -57,7 +41,23 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="json.SampleVO"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="util.MybatisUtil"/>
+<fullyQualifiedTypeName name="fileupload.dao.FileInfoDaoImpl"/>
+<fullyQualifiedTypeName name="fileupload.dao.IFileInfoDao"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Part"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="fileupload.service.IFileInfoService"/>
+<fullyQualifiedTypeName name="fileupload.service.FileInfoServiceImpl"/>
+<fullyQualifiedTypeName name="vo.FileInfoVO"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>

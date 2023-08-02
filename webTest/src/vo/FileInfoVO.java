@@ -52,6 +52,4 @@ public class FileInfoVO {
 				+ file_date + "]";
 	}
 	
-	
-	
 }
