@@ -5,6 +5,9 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,7 +59,8 @@ public class FileDownload extends HttpServlet {
 			String headerKey = "content-disposition";
 			
 			//헤더의 value값으로는 다운로드할 때 클라이언트에 저장될 파일 이름을 지정하는 곳으로  원래의 파일명으로 지정한다.
-			String headerValue = "attachment; filename=\""+fvo.getOrigin_file_name() +"\"";
+//			String headerValue = "attachment; filename=\""+fvo.getOrigin_file_name() +"\"";
+			String headerValue = "attachment; "+getEncodeFileName(request, fvo.getOrigin_file_name());
 			
 			response.setHeader(headerKey, headerValue);
 			
@@ -96,6 +100,26 @@ public class FileDownload extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	private String getEncodeFileName(HttpServletRequest request, String filename) {
+		String encodedFilename="";	//변환값이 저장될 변수
+		
+		String userAgent = request.getHeader("user-agent");
+		try {
+			// MSIE 10버전 이하의 웹브라우저
+			if(userAgent.contains("MSIE") || userAgent.contains("Trident")) {
+				encodedFilename = "filename=\""+ URLEncoder.encode(filename, "utf-8")
+								.replaceAll("\\+", "\\ ") + "\"";
+			}else {		//기타 다른 웹브라우저
+				encodedFilename = "filename*=UTF-8''" + URLEncoder.encode(filename, "utf-8")
+								.replaceAll("\\+", "%20");
+			}
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("지원하지 않는 인코딩 방식입니다...");
+		}
+		
+		return encodedFilename;
 	}
 
 }

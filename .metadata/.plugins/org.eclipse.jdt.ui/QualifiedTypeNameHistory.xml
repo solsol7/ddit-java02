@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="board.util.DBUtil3"/>
-<fullyQualifiedTypeName name="board.service.BoardService"/>
-<fullyQualifiedTypeName name="board.service.BoardServiceImpl"/>
 <fullyQualifiedTypeName name="board.controller.BoardController"/>
 <fullyQualifiedTypeName name="board.dao.BoardDao"/>
 <fullyQualifiedTypeName name="board.vo.BoardVO"/>
@@ -16,9 +10,6 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
 <fullyQualifiedTypeName name="vo.LprodVO"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
-<fullyQualifiedTypeName name="member.dao.IMemberDao"/>
-<fullyQualifiedTypeName name="member.service.IMemberService"/>
-<fullyQualifiedTypeName name="member.service.MemberServiceImpl"/>
 <fullyQualifiedTypeName name="vo.MemberVO"/>
 <fullyQualifiedTypeName name="member.dao.IMemberDaoImpl"/>
 <fullyQualifiedTypeName name="board.dao.BoardDaoImpl"/>
@@ -27,7 +18,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="java.net.URLDecoder"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
@@ -39,25 +29,35 @@
 <fullyQualifiedTypeName name="session.login.service.MemberServiceImpl"/>
 <fullyQualifiedTypeName name="session.login.vo.MemberVO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.google.gson.Gson"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="json.SampleVO"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
-<fullyQualifiedTypeName name="util.MybatisUtil"/>
 <fullyQualifiedTypeName name="fileupload.dao.FileInfoDaoImpl"/>
 <fullyQualifiedTypeName name="fileupload.dao.IFileInfoDao"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
 <fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
+<fullyQualifiedTypeName name="java.net.URLEncoder"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="fileupload.service.IFileInfoService"/>
 <fullyQualifiedTypeName name="fileupload.service.FileInfoServiceImpl"/>
 <fullyQualifiedTypeName name="vo.FileInfoVO"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.nio.BufferOverflowException"/>
 <fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="member.dao.IMemberDao"/>
+<fullyQualifiedTypeName name="member.dao.MemberDaoImpl"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="util.MybatisUtil"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="member.service.IMemberService"/>
+<fullyQualifiedTypeName name="member.service.MemberServiceImpl"/>
+<fullyQualifiedTypeName name="member.vo.MemberVO"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>
